@@ -15,9 +15,14 @@ namespace CapaEntidad
         public string Clave { get; set; }
         public string Celular { get; set; }
         public string Foto { get; set; }
-        public bool Activo { get; set; }
+        public int IdInmobiliaria { get; set; }
+        public int IdRol { get; set; }
+        public string Token { get; set; }
+        public bool Estado { get; set; }
         public string FechaRegistro { get; set; }
-
+        public EInmobiliaria Inmobiliaria { get; set; }
+        public ERol Rol { get; set; }
+        public string FullName => $"{Nombres} {Apellidos}";
         public string ImageFull => string.IsNullOrEmpty(Foto)
             ? $"/Imagenes/sinfotoo.png"
             : Foto;

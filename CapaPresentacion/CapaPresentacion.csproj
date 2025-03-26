@@ -146,6 +146,7 @@
     <Content Include="Imagenes\sinfotoo.png" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
+    <Content Include="PropiedadesIn.aspx" />
     <Content Include="UsuariosIn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -165,6 +166,13 @@
       <DependentUpon>PageH.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropiedadesIn.aspx.cs">
+      <DependentUpon>PropiedadesIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropiedadesIn.aspx.designer.cs">
+      <DependentUpon>PropiedadesIn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UsuariosIn.aspx.cs">
       <DependentUpon>UsuariosIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

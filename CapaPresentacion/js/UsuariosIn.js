@@ -45,13 +45,13 @@ function listaUsuarios() {
                     return `<img src=${data} class="w-px-40 h-auto rounded-circle"/>`
                 }
             },
-            { "data": "Nombres" },
-            { "data": "Apellidos" },
+            { "data": "FullName" },
+            //{ "data": "Apellidos" },
             { "data": "Correo" },
             { "data": "Celular" },
             { "data": "FechaRegistro" },
             {
-                "data": "Activo", render: function (data) {
+                "data": "Estado", render: function (data) {
                     if (data === true)
                         return '<span class="badge bg-primary">Activo</span>';
                     else

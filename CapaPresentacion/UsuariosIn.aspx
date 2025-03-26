@@ -121,7 +121,7 @@
                                     <th>Id</th>
                                     <th>Foto</th>
                                     <th>Nombres</th>
-                                    <th>Apellidos</th>
+                                    <%--<th>Apellidos</th>--%>
                                     <th>Correo</th>
                                     <th>Celular</th>
                                     <th>Fecha</th>

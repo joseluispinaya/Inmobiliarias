@@ -38,7 +38,7 @@ namespace CapaNegocio
                         Clave = "123456",
                         Celular = "789456123",
                         Foto = "",
-                        Activo = true,
+                        Estado = true,
                         FechaRegistro = "20/03/2025"
                     },
                     new EUsuario
@@ -50,7 +50,7 @@ namespace CapaNegocio
                         Clave = "abcdef",
                         Celular = "789123456",
                         Foto = "",
-                        Activo = true,
+                        Estado = true,
                         FechaRegistro = "21/03/2025"
                     },
                     new EUsuario
@@ -62,7 +62,7 @@ namespace CapaNegocio
                         Clave = "qwerty",
                         Celular = "789654123",
                         Foto = "",
-                        Activo = false,
+                        Estado = false,
                         FechaRegistro = "22/03/2025"
                     }
                 };

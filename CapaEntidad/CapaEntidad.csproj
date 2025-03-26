@@ -41,6 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EDistrito.cs" />
+    <Compile Include="EImagenProp.cs" />
+    <Compile Include="EInmobiliaria.cs" />
+    <Compile Include="EInquilino.cs" />
+    <Compile Include="EPropiedad.cs" />
+    <Compile Include="EPropietario.cs" />
+    <Compile Include="ERol.cs" />
+    <Compile Include="ETipoPropiedad.cs" />
     <Compile Include="EUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respuesta.cs" />
