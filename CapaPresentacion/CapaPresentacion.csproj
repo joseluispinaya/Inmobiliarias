@@ -144,8 +144,12 @@
     <Content Include="assets\vendor\libs\popper\popper.js" />
     <Content Include="Home.aspx" />
     <Content Include="Imagenes\sinfotoo.png" />
+    <Content Include="InmobiliariasIn.aspx" />
+    <Content Include="js\InmobiliariasIn.js" />
+    <Content Include="js\ListaUsuariosIn.js" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
+    <Content Include="ListaUsuariosIn.aspx" />
     <Content Include="PropiedadesIn.aspx" />
     <Content Include="UsuariosIn.aspx" />
     <Content Include="Web.config" />
@@ -157,6 +161,20 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InmobiliariasIn.aspx.cs">
+      <DependentUpon>InmobiliariasIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InmobiliariasIn.aspx.designer.cs">
+      <DependentUpon>InmobiliariasIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaUsuariosIn.aspx.cs">
+      <DependentUpon>ListaUsuariosIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaUsuariosIn.aspx.designer.cs">
+      <DependentUpon>ListaUsuariosIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageH.Master.cs">
       <DependentUpon>PageH.Master</DependentUpon>

@@ -142,6 +142,45 @@
                 <div data-i18n="Analytics">Inicio</div>
               </a>
             </li>
+              <li class="menu-item">
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons bx bx-file"></i>
+                      <div data-i18n="Layouts">Usuarios</div>
+                  </a>
+
+                  <ul class="menu-sub">
+                      <li class="menu-item">
+                          <a href="ListaUsuariosIn.aspx" class="menu-link">
+                              <div data-i18n="Without menu">Lista</div>
+                          </a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="UsuariosIn.aspx" class="menu-link">
+                              <div data-i18n="Without navbar">Nuevo Registro</div>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="menu-item">
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons bx bx-collection"></i>
+                      <div data-i18n="Layouts">Configuracion</div>
+                  </a>
+
+                  <ul class="menu-sub">
+                      <li class="menu-item">
+                          <a href="#" class="menu-link">
+                              <div data-i18n="Without menu">Tipo Porpiedades</div>
+                          </a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="InmobiliariasIn.aspx" class="menu-link">
+                              <div data-i18n="Without navbar">Nuevo Inmobiliaria</div>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
 
             <!-- Layouts -->
             <li class="menu-item">
@@ -169,23 +208,39 @@
               </ul>
             </li>
             <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Clientes</span></li>
             <!-- Cards -->
+
+              <li class="menu-item">
+                  <a href="javascript:void(0);" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons bx bx-user"></i>
+                      <div data-i18n="Layouts">Clientes</div>
+                  </a>
+
+                  <ul class="menu-sub">
+                      <li class="menu-item">
+                          <a href="#" class="menu-link">
+                              <div data-i18n="Without menu">Propietarios</div>
+                          </a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="#" class="menu-link">
+                              <div data-i18n="Without navbar">Inquilinos</div>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+
             <li class="menu-item">
               <a href="UsuariosIn.aspx" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Data Table</div>
+                <div data-i18n="Basic">Prueba Table</div>
               </a>
             </li>
 
-            <li class="menu-item">
-              <a href="#" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Boxicons">Boxicons</div>
-              </a>
-            </li>
+            
             <!-- Misc -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Panel de Visitas</span></li>
             <li class="menu-item">
               <a
                 href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
@@ -193,7 +248,7 @@
                 class="menu-link"
               >
                 <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Support</div>
+                <div data-i18n="Support">Solucitudes</div>
               </a>
             </li>
             <li class="menu-item">
@@ -359,7 +414,7 @@
         href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
         target="_blank"
         class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
+        >Chat</a
       >
     </div>
 
@@ -376,6 +431,7 @@
     <script src="https://cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.4/js/responsive.bootstrap5.js"></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 

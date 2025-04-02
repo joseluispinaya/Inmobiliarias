@@ -2,17 +2,11 @@
 var table;
 
 $(document).ready(function () {
-    
-    //$('#example').DataTable({
-    //    responsive: true,
-    //    language: {
-    //        url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-    //    }
-    //});
-    //listaUsuarios();
+
+    listaUsuariosP();
 })
 
-function listaUsuarios() {
+function listaUsuariosP() {
     if ($.fn.DataTable.isDataTable("#exampleu")) {
         $("#exampleu").DataTable().destroy();
         $('#exampleu tbody').empty();
@@ -71,30 +65,3 @@ function listaUsuarios() {
         }
     });
 }
-
-function cargarTables() {
-
-    $.ajax({
-        type: "POST",
-        url: "UsuariosIn.aspx/ObtenerUsuarios",
-        data: {},
-        contentType: 'application/json; charset=utf-8',
-        dataType: "json",
-        error: function (xhr, ajaxOptions, thrownError) {
-            console.log(xhr.status + " \n" + xhr.responseText, "\n" + thrownError);
-        },
-        success: function (response) {
-            if (response.d.Estado) {
-                console.log(response.d.Data);
-            } else {
-                alert("error al cargar los datos")
-                //swal("Mensaje", response.d.Mensaje, "warning");
-            }
-
-        }
-    });
-}
-
-$('#btnmodl').on('click', function () {
-    $("#largeModal").modal("show");
-})

@@ -2,142 +2,105 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+
     <div class="row">
-    <div class="col-12">
+    <div class="col-md-12">
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+            <li class="nav-item">
+                <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Registro de Usuario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ListaUsuariosIn.aspx"><i class="bx bx-menu me-1"></i> Lista de Usuarios</a>
+            </li>
+        </ul>
         <div class="card mb-4">
-            <!-- <h5 class="card-header">Basic Buttons</h5> -->
+            <h5 class="card-header">Registro de Usuario</h5>
             <div class="card-body">
-                <div class="demo-inline-spacing">
-                    <button type="button" id="btnmodl" class="btn btn-primary">Ver modal</button>
-                    <button type="button" class="btn btn-secondary">Opciones</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label for="txtNombres" class="form-label">Nombres</label>
+                                <input class="form-control form-control-sm" type="text" id="txtNombres" name="Nombres"
+                                    autofocus />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="txtApellidos" class="form-label">Apellidos</label>
+                                <input class="form-control form-control-sm" type="text" name="Apellidos" id="txtApellidos" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="txtCorreo" class="form-label">Correo</label>
+                                <input class="form-control form-control-sm" type="text" id="txtCorreo" name="Correo"
+                                    placeholder="correo@example.com" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="txtContrasena" class="form-label">Contraseña</label>
+                                <input type="text" class="form-control form-control-sm" id="txtContrasena"
+                                    name="Contraseña" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <label for="txtCelular" class="form-label">Celular</label>
+                                <input class="form-control form-control-sm" type="text" id="txtCelular" name="Celular"
+                                    placeholder="Celular" />
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label class="form-label" for="cboRol">Rol</label>
+                                <select id="cboRol" class="form-select form-select-sm">
+                                    <option value="">Select</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Secretaria">Secretaria</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label for="cboInmobiliaria" class="form-label">Inmobiliaria</label>
+                                <select id="cboInmobiliaria" class="form-select form-select-sm">
+                                    <option value="">Select</option>
+                                    <option value="en">La casa feliz</option>
+                                    <option value="fr">Grupo Zion</option>
+                                </select>
+                            </div>
+                        </div>
+                        <%--<h5>Basic Layout</h5>--%>
+                        <div class="d-flex align-items-start align-items-sm-center gap-4">
+                            <img src="assets/img/avatars/1.png" alt="user-avatar" class="d-block rounded" height="100" width="100"
+                                id="imgUsuarioReg" />
+                            <div class="button-wrapper">
+                                <div class="me-2 mb-0">
+                                    <label for="txtFotoUr" class="form-label">Seleccione foto</label>
+                                    <input class="form-control" type="file" id="txtFotoUr">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <button type="button" class="btn btn-sm btn-primary me-2">Guardar</button>
+                    <button type="button" id="btnmodl" class="btn btn-sm btn-outline-secondary">Cancelar Modal</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-    <div class="row">
-    <div class="col-lg-12">
-        <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Basic Table</h5>
-                <small class="text-muted float-end">Default Table</small>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <table id="example" class="table table-striped" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011-04-25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011-07-25</td>
-                                    <td>$170,750</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009-01-12</td>
-                                    <td>$86,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2012-03-29</td>
-                                    <td>$433,060</td>
-                                </tr>
-                                <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    <td>2008-11-28</td>
-                                    <td>$162,700</td>
-                                </tr>
-                                <tr>
-                                    <td>Brielle Williamson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>New York</td>
-                                    <td>61</td>
-                                    <td>2012-12-02</td>
-                                    <td>$372,000</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                            </tfoot>
-                        </table>
+    <%--<div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="demo-inline-spacing">
+                        <button type="button" id="btnmodl" class="btn btn-primary">Ver modal</button>
+                        <button type="button" class="btn btn-secondary">Opciones</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div>--%>
 
-    <div class="row">
-    <div class="col-lg-12">
-        <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">Usuarios Table</h5>
-                <small class="text-muted float-end">Usuarios Table</small>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <table id="exampleu" class="table table-striped nowrap" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Foto</th>
-                                    <th>Nombres</th>
-                                    <%--<th>Apellidos</th>--%>
-                                    <th>Correo</th>
-                                    <th>Celular</th>
-                                    <th>Fecha</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
     <div class="modal fade" id="largeModal" tabindex="-1" aria-hidden="false">
     <div class="modal-dialog modal-lg" role="document">
