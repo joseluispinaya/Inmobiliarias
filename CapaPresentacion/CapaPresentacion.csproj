@@ -147,10 +147,12 @@
     <Content Include="InmobiliariasIn.aspx" />
     <Content Include="js\InmobiliariasIn.js" />
     <Content Include="js\ListaUsuariosIn.js" />
+    <Content Include="js\PropiedadesIn.js" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
     <Content Include="ListaUsuariosIn.aspx" />
     <Content Include="PropiedadesIn.aspx" />
+    <Content Include="PropietariosIn.aspx" />
     <Content Include="UsuariosIn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -190,6 +192,13 @@
     </Compile>
     <Compile Include="PropiedadesIn.aspx.designer.cs">
       <DependentUpon>PropiedadesIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PropietariosIn.aspx.cs">
+      <DependentUpon>PropietariosIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropietariosIn.aspx.designer.cs">
+      <DependentUpon>PropietariosIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuariosIn.aspx.cs">
       <DependentUpon>UsuariosIn.aspx</DependentUpon>

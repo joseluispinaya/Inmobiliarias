@@ -1,169 +1,159 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PageH.Master" AutoEventWireup="true" CodeBehind="PropiedadesIn.aspx.cs" Inherits="CapaPresentacion.PropiedadesIn" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .gmapsz {
+            height: 300px;
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-
     <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-pills flex-column flex-md-row mb-3">
-        <li class="nav-item">
-          <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"
-            ><i class="bx bx-bell me-1"></i> Notifications</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"
-            ><i class="bx bx-link-alt me-1"></i> Connections</a
-          >
-        </li>
-      </ul>
-      <div class="card mb-4">
-        <h5 class="card-header">Profile Details</h5>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                          <label for="firstName" class="form-label">First Name</label>
-                          <input
-                            class="form-control form-control-sm"
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            value="John"
-                            autofocus
-                          />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="lastName" class="form-label">Last Name</label>
-                          <input class="form-control form-control-sm" type="text" name="lastName" id="lastName" value="Doe" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="email" class="form-label">E-mail</label>
-                          <input
-                            class="form-control form-control-sm"
-                            type="text"
-                            id="email"
-                            name="email"
-                            value="john.doe@example.com"
-                            placeholder="john.doe@example.com"
-                          />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="organization" class="form-label">Organization</label>
-                          <input
-                            type="text"
-                            class="form-control form-control-sm"
-                            id="organization"
-                            name="organization"
-                            value="ThemeSelection"
-                          />
-                        </div>
-                      </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="mb-3 col-md-6">
-                          <label for="state" class="form-label">State</label>
-                          <input class="form-control form-control-sm" type="text" id="state" name="state" placeholder="California" />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="zipCode" class="form-label">Zip Code</label>
-                          <input
-                            type="text"
-                            class="form-control form-control-sm"
-                            id="zipCode"
-                            name="zipCode"
-                            placeholder="231465"
-                            maxlength="6"
-                          />
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label class="form-label" for="country">Country</label>
-                          <select id="country" class="form-select form-select-sm">
-                            <option value="">Select</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Thailand">Thailand</option>
-                          </select>
-                        </div>
-                        <div class="mb-3 col-md-6">
-                          <label for="language" class="form-label">Language</label>
-                          <select id="language" class="form-select form-select-sm">
-                            <option value="">Select Language</option>
-                            <option value="en">English</option>
-                            <option value="fr">French</option>
-                          </select>
-                        </div>
-                      </div>
-                </div>
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Registro de Propiedades</h5>
+                <small class="text-muted float-end">Inmobiliarias</small>
             </div>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="mb-3 col-md-7">
-                            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+            <div class="card-body">
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label" for="cboPropie">Propietario</label>
+                        <select id="cboPropie" class="form-select form-select-sm">
+                            <option value="">Select</option>
+                            <option value="Administrador">Jose Luis Pinaya</option>
+                            <option value="Secretaria">Secretaria</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="cboTipoprop" class="form-label">Tipo Propiedad</label>
+                        <select id="cboTipoprop" class="form-select form-select-sm">
+                            <option value="">Select</option>
+                            <option value="en">Departamento</option>
+                            <option value="fr">Grupo Zion</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="cboDistrito" class="form-label">Distrito</label>
+                        <select id="cboDistrito" class="form-select form-select-sm">
+                            <option value="">Select</option>
+                            <option value="en">Distrito 1</option>
+                            <option value="fr">Grupo Zion</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label" for="txtPrecio">Precio</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-Precio" class="input-group-text"><i
+                                    class="bx bx-dollar"></i></span>
+                            <input type="text" id="txtPrecio" class="form-control"
+                                placeholder="100" aria-label="100"
+                                aria-describedby="basic-Precio" />
                         </div>
-        
-                        <div class="col-md-5">
-                            <div class="mb-3">
-                                <label for="defaultInputs" class="form-label">Campo2 input</label>
-                                <input id="defaultInputs" class="form-control form-control-sm" type="text" placeholder="Campo2 input">
-                              </div>
-                              <div class="mb-3">
-                                <label for="defaultInputss" class="form-label">Campo input</label>
-                                <input id="defaultInputss" class="form-control form-control-sm" type="text" placeholder="Campo input">
-                              </div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label" for="txtSuperficie">Superficie</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-Superficie" class="input-group-text"><i
+                                    class="bx bx-ruler"></i></span>
+                            <input type="text" id="txtSuperficie" class="form-control"
+                                placeholder="100" aria-label="100"
+                                aria-describedby="basic-Superficie" />
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label" for="txtCasa">Nro Casa</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-Casa" class="input-group-text"><i
+                                    class="bx bx-home"></i></span>
+                            <input type="text" id="txtCasa" class="form-control"
+                                placeholder="10" aria-label="10"
+                                aria-describedby="basic-Casa" />
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <h5>Basic Layout</h5>
-<div class="d-flex align-items-start align-items-sm-center gap-4">
-  <img
-    src="assets/img/avatars/1.png"
-    alt="user-avatar"
-    class="d-block rounded"
-    height="100"
-    width="100"
-    id="uploadedAvatar"
-  />
-  <div class="button-wrapper">
-    <label for="upload" class="btn btn-primary me-2 mb-0" tabindex="0">
-      <span class="d-none d-sm-block">new photo</span>
-      <i class="bx bx-upload d-block d-sm-none"></i>
-      <input
-        type="file"
-        id="upload"
-        class="account-file-input"
-        hidden
-        accept="image/png, image/jpeg"
-      />
-    </label>
-    <button type="button" class="btn btn-outline-secondary account-image-reset mb-0">
-      <i class="bx bx-reset d-block d-sm-none"></i>
-      <span class="d-none d-sm-block">Reset</span>
-    </button>
-  </div>
-</div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtDireccion">Direccion</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-icon-default-direccion" class="input-group-text"><i
+                                    class="bx bx-buildings"></i></span>
+                            <input type="text" class="form-control" id="txtDireccion" placeholder="Direccion"
+                                aria-label="Direccion" aria-describedby="basic-icon-default-direccion" />
+                        </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtVirtual">Url Virtual</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-Virtual" class="input-group-text"><i
+                                    class="bx bx-link"></i></span>
+                            <input type="text" class="form-control" id="txtVirtual" placeholder="URL"
+                                aria-label="URL" aria-describedby="basic-Virtual" />
+                        </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="txtComentario">Comentario</label>
+                    <div class="input-group input-group-merge">
+                      <span id="basic-Comentario" class="input-group-text"
+                        ><i class="bx bx-comment"></i
+                      ></span>
+                      <textarea
+                        id="txtComentario"
+                        class="form-control"
+                        placeholder="Comentarios"
+                        aria-label="Comentarios"
+                        aria-describedby="basic-Comentario"
+                      ></textarea>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Seleccione Ubicacion</h5>
+                <small class="text-muted float-end">Propiedad</small>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label" for="txtLatitud">Latitud</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-Latitud" class="input-group-text"><i
+                                    class="bx bx-been-here"></i></span>
+                            <input type="text" id="txtLatitud" class="form-control"
+                                placeholder="-100" aria-label="-100"
+                                aria-describedby="basic-Latitud" readonly />
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label" for="txtLongitud">Longitud</label>
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-Longitud" class="input-group-text"><i
+                                    class="bx bx-been-here"></i></span>
+                            <input type="text" id="txtLongitud" class="form-control"
+                                placeholder="-10" aria-label="-10"
+                                aria-describedby="basic-Longitud" readonly />
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mapaz" class="gmapsz"></div>
+
+                <div class="mt-4">
+                    <button type="button" id="btnGuardarPro" class="btn btn-sm rounded-pill btn-success me-2">Guardar</button>
+                    <button type="button" class="btn btn-sm rounded-pill btn-danger">Cancelar</button>
                 </div>
             </div>
-
-              <div class="mt-2">
-                <button type="button" class="btn btn-sm btn-primary me-2">Save changes</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
-              </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="js/PropiedadesIn.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF1HcfGOeusxinFBpjXsMccjQxCtxRrV4&loading=async&callback=initMap"></script>
 </asp:Content>
