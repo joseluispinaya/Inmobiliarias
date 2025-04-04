@@ -144,13 +144,19 @@
     <Content Include="assets\vendor\libs\popper\popper.js" />
     <Content Include="Home.aspx" />
     <Content Include="Imagenes\sinfotoo.png" />
+    <Content Include="Imagenes\sinfotou.png" />
+    <Content Include="Imagenes\sinimg.png" />
     <Content Include="InmobiliariasIn.aspx" />
     <Content Include="js\InmobiliariasIn.js" />
+    <Content Include="js\ListaPropietariosIn.js" />
     <Content Include="js\ListaUsuariosIn.js" />
+    <Content Include="js\PanelVisitas.js" />
     <Content Include="js\PropiedadesIn.js" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
+    <Content Include="ListaPropietariosIn.aspx" />
     <Content Include="ListaUsuariosIn.aspx" />
+    <Content Include="PanelVisitas.aspx" />
     <Content Include="PropiedadesIn.aspx" />
     <Content Include="PropietariosIn.aspx" />
     <Content Include="UsuariosIn.aspx" />
@@ -171,6 +177,13 @@
     <Compile Include="InmobiliariasIn.aspx.designer.cs">
       <DependentUpon>InmobiliariasIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListaPropietariosIn.aspx.cs">
+      <DependentUpon>ListaPropietariosIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaPropietariosIn.aspx.designer.cs">
+      <DependentUpon>ListaPropietariosIn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListaUsuariosIn.aspx.cs">
       <DependentUpon>ListaUsuariosIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -184,6 +197,13 @@
     </Compile>
     <Compile Include="PageH.Master.designer.cs">
       <DependentUpon>PageH.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PanelVisitas.aspx.cs">
+      <DependentUpon>PanelVisitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelVisitas.aspx.designer.cs">
+      <DependentUpon>PanelVisitas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropiedadesIn.aspx.cs">

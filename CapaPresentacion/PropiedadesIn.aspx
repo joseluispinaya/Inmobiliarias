@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .gmapsz {
-            height: 300px;
+            height: 290px;
             width: 100%;
             border-radius: 4px;
             margin-bottom: 10px;
@@ -10,6 +10,47 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <div class="row">
+    <div class="col-xxl">
+        <div class="card mb-2">
+            <div class="card-body">
+                <div class="row">
+                    <label class="col-sm-2 col-form-label" for="txtFullname">Propietario</label>
+                    <div class="col-sm-4">
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-fullname" class="input-group-text"><i
+                                    class="bx bx-user"></i></span>
+                            <input type="text" class="form-control" id="txtFullname"
+                                aria-label="John Doe"
+                                aria-describedby="basic-fullname" readonly />
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-ci" class="input-group-text"><i
+                                    class="bx bx-phone"></i></span>
+                            <input type="text" id="txtnrocilprop" class="form-control phone-mask"
+                                placeholder="658 799 8941" aria-label="658 799 8941"
+                                aria-describedby="basic-ci" readonly />
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="input-group input-group-merge input-group-sm">
+                            <span id="basic-fono" class="input-group-text"><i
+                                    class="bx bx-phone"></i></span>
+                            <input type="text" id="txtcelprop" class="form-control phone-mask"
+                                placeholder="658 799 8941" aria-label="658 799 8941"
+                                aria-describedby="basic-fono" readonly />
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-sm btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="row">
     <div class="col-xl">
         <div class="card mb-4">
@@ -20,10 +61,10 @@
             <div class="card-body">
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label class="form-label" for="cboPropie">Propietario</label>
+                        <label class="form-label" for="cboPropie">Estado</label>
                         <select id="cboPropie" class="form-select form-select-sm">
                             <option value="">Select</option>
-                            <option value="Administrador">Jose Luis Pinaya</option>
+                            <option value="Administrador">Activo</option>
                             <option value="Secretaria">Secretaria</option>
                         </select>
                     </div>

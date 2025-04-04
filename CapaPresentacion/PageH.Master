@@ -186,7 +186,7 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Propiedades</div>
+                <div data-i18n="Layouts">Inmuebles</div>
               </a>
 
               <ul class="menu-sub">
@@ -207,34 +207,36 @@
                 </li>
               </ul>
             </li>
-            <!-- Components -->
-            <li class="menu-header small text-uppercase"><span class="menu-header-text">Clientes</span></li>
-            <!-- Cards -->
 
               <li class="menu-item">
                   <a href="javascript:void(0);" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons bx bx-user"></i>
-                      <div data-i18n="Layouts">Clientes</div>
+                      <div data-i18n="Layouts">Propietarios</div>
                   </a>
 
                   <ul class="menu-sub">
                       <li class="menu-item">
-                          <a href="#" class="menu-link">
-                              <div data-i18n="Without menu">Propietarios</div>
+                          <a href="ListaPropietariosIn.aspx" class="menu-link">
+                              <div data-i18n="Without menu">Lista Propietarios</div>
+                          </a>
+                      </li>
+                      <li class="menu-item">
+                          <a href="PropietariosIn.aspx" class="menu-link">
+                              <div data-i18n="Without navbar">Nuevo Registro</div>
                           </a>
                       </li>
                       <li class="menu-item">
                           <a href="#" class="menu-link">
-                              <div data-i18n="Without navbar">Inquilinos</div>
+                              <div data-i18n="Without navbar">Consultas</div>
                           </a>
                       </li>
                   </ul>
               </li>
 
             <li class="menu-item">
-              <a href="UsuariosIn.aspx" class="menu-link">
+              <a href="PanelVisitas.aspx" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Prueba Table</div>
+                <div data-i18n="Basic">Vistas</div>
               </a>
             </li>
 

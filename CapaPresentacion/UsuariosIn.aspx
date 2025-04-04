@@ -51,9 +51,6 @@
                             <div class="mb-3 col-md-4">
                                 <label class="form-label" for="cboRol">Rol</label>
                                 <select id="cboRol" class="form-select form-select-sm">
-                                    <option value="">Select</option>
-                                    <option value="Administrador">Administrador</option>
-                                    <option value="Secretaria">Secretaria</option>
                                 </select>
                             </div>
                             <div class="mb-3 col-md-4">
@@ -65,22 +62,36 @@
                                 </select>
                             </div>
                         </div>
-                        <%--<h5>Basic Layout</h5>--%>
                         <div class="d-flex align-items-start align-items-sm-center gap-4">
-                            <img src="assets/img/avatars/1.png" alt="user-avatar" class="d-block rounded" height="100" width="100"
+                            <img src="Imagenes/sinimg.png" alt="user-avatar" class="d-block rounded" height="100" width="100"
                                 id="imgUsuarioReg" />
                             <div class="button-wrapper">
+                                <label for="txtFotoUr" class="btn btn-primary me-2 mb-2" tabindex="0">
+                                    <span class="d-none d-sm-block">Seleccione Foto</span>
+                                    <i class="bx bx-upload d-block d-sm-none"></i>
+                                    <input
+                                        type="file"
+                                        id="txtFotoUr"
+                                        class="account-file-input"
+                                        hidden
+                                        accept="image/png, image/jpeg" />
+                                </label>
+
+                                <p class="text-muted mb-0">Imagenes JPG or PNG. Maximo 2 Mb</p>
+                            </div>
+
+                            <%--<div class="button-wrapper">
                                 <div class="me-2 mb-0">
                                     <label for="txtFotoUr" class="form-label">Seleccione foto</label>
                                     <input class="form-control" type="file" id="txtFotoUr">
                                 </div>
-                            </div>
+                            </div>--%>
                         </div>
 
                     </div>
                 </div>
                 <div class="mt-2">
-                    <button type="button" class="btn btn-sm btn-primary me-2">Guardar</button>
+                    <button type="button" id="btnRegistrarU" class="btn btn-sm btn-primary me-2">Guardar</button>
                     <button type="button" id="btnmodl" class="btn btn-sm btn-outline-secondary">Cancelar Modal</button>
                 </div>
             </div>

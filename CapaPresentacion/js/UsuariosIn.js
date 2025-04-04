@@ -2,14 +2,7 @@
 var table;
 
 $(document).ready(function () {
-    
-    //$('#example').DataTable({
-    //    responsive: true,
-    //    language: {
-    //        url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-    //    }
-    //});
-    //listaUsuarios();
+    cargarRoles();
 })
 
 function listaUsuarios() {
@@ -72,11 +65,12 @@ function listaUsuarios() {
     });
 }
 
-function cargarTables() {
+function cargarRoles() {
+    $("#cboRol").html("");
 
     $.ajax({
         type: "POST",
-        url: "UsuariosIn.aspx/ObtenerUsuarios",
+        url: "UsuariosIn.aspx/ObtenerRol",
         data: {},
         contentType: 'application/json; charset=utf-8',
         dataType: "json",
@@ -85,15 +79,54 @@ function cargarTables() {
         },
         success: function (response) {
             if (response.d.Estado) {
-                console.log(response.d.Data);
+                $.each(response.d.Data, function (i, row) {
+                    if (row.Estado === true) {
+                        $("<option>").attr({ "value": row.IdRol }).text(row.Descripcion).appendTo("#cboRol");
+                    }
+
+                })
             } else {
-                alert("error al cargar los datos")
-                //swal("Mensaje", response.d.Mensaje, "warning");
+                swal("Mensaje", response.d.Mensaje, "warning");
             }
 
         }
     });
 }
+
+function mostrarImagenSeleccionada(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgUsuarioReg').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        $('#imgUsuarioReg').attr('src', "Imagenes/sinimg.png");
+    }
+
+
+}
+
+$('#txtFotoUr').change(function () {
+    mostrarImagenSeleccionada(this);
+});
+
+$('#btnRegistrarU').on('click', function () {
+    swal({
+        title: "Mensaje",
+        text: "Registrado con exito",
+        icon: "success",
+        timer: 2000,
+        buttons: false
+    });
+
+    setTimeout(function () {
+        window.location.href = 'ListaUsuariosIn.aspx';
+    }, 3000);
+
+})
 
 $('#btnmodl').on('click', function () {
     $("#largeModal").modal("show");

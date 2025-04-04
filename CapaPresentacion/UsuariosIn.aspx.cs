@@ -18,6 +18,25 @@ namespace CapaPresentacion
 		}
 
         [WebMethod]
+        public static Respuesta<List<ERol>> ObtenerRol()
+        {
+            try
+            {
+                Respuesta<List<ERol>> Lista = NUsuario.GetInstance().ListaRoles();
+                return Lista;
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<List<ERol>>()
+                {
+                    Estado = false,
+                    Mensaje = "Error al obtener los roles: " + ex.Message,
+                    Data = null
+                };
+            }
+        }
+
+        [WebMethod]
         public static Respuesta<List<EUsuario>> ObtenerUsuarios()
         {
             try
