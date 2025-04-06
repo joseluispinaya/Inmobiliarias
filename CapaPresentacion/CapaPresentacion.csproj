@@ -108,6 +108,7 @@
     <Content Include="assets\img\illustrations\girl-doing-yoga-light.png" />
     <Content Include="assets\img\illustrations\man-with-laptop-light.png" />
     <Content Include="assets\img\illustrations\page-misc-error-light.png" />
+    <Content Include="assets\img\illustrations\verific.png" />
     <Content Include="assets\img\layouts\layout-container-light.png" />
     <Content Include="assets\img\layouts\layout-fluid-light.png" />
     <Content Include="assets\img\layouts\layout-without-menu-light.png" />
@@ -121,6 +122,8 @@
     <Content Include="assets\js\ui-modals.js" />
     <Content Include="assets\js\ui-popover.js" />
     <Content Include="assets\js\ui-toasts.js" />
+    <Content Include="assets\plugin\loadingoverlay\loadingoverlay.js" />
+    <Content Include="assets\plugin\loadingoverlay\loadingoverlay.min.js" />
     <Content Include="assets\vendor\css\core.css" />
     <Content Include="assets\vendor\css\pages\page-account-settings.css" />
     <Content Include="assets\vendor\css\pages\page-auth.css" />
@@ -142,6 +145,7 @@
     <Content Include="assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.css" />
     <Content Include="assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.js" />
     <Content Include="assets\vendor\libs\popper\popper.js" />
+    <Content Include="ConfirmacionIn.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Imagenes\sinfotoo.png" />
     <Content Include="Imagenes\sinfotou.png" />
@@ -163,6 +167,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfirmacionIn.aspx.cs">
+      <DependentUpon>ConfirmacionIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionIn.aspx.designer.cs">
+      <DependentUpon>ConfirmacionIn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -227,6 +238,7 @@
     <Compile Include="UsuariosIn.aspx.designer.cs">
       <DependentUpon>UsuariosIn.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utilidadesj.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\vendor\fonts\boxicons\boxicons.eot" />

@@ -15,27 +15,28 @@
         </ul>
         <div class="card mb-4">
             <h5 class="card-header">Registro de Usuario</h5>
-            <div class="card-body">
+            <div class="card-body" id="cargand">
+                <input id="txtIdUsuario" name="IdUsuario" value="0" type="hidden" />
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label for="txtNombres" class="form-label">Nombres</label>
-                                <input class="form-control form-control-sm" type="text" id="txtNombres" name="Nombres"
+                                <input class="form-control form-control-sm modelval" type="text" id="txtNombres" name="Nombres"
                                     autofocus />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtApellidos" class="form-label">Apellidos</label>
-                                <input class="form-control form-control-sm" type="text" name="Apellidos" id="txtApellidos" />
+                                <input class="form-control form-control-sm modelval" type="text" name="Apellidos" id="txtApellidos" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtCorreo" class="form-label">Correo</label>
-                                <input class="form-control form-control-sm" type="text" id="txtCorreo" name="Correo"
+                                <input class="form-control form-control-sm modelval" type="text" id="txtCorreo" name="Correo"
                                     placeholder="correo@example.com" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtContrasena" class="form-label">Contraseña</label>
-                                <input type="text" class="form-control form-control-sm" id="txtContrasena"
+                                <input type="text" class="form-control form-control-sm modelval" id="txtContrasena"
                                     name="Contraseña" />
                             </div>
                         </div>
@@ -45,7 +46,7 @@
                         <div class="row">
                             <div class="mb-3 col-md-4">
                                 <label for="txtCelular" class="form-label">Celular</label>
-                                <input class="form-control form-control-sm" type="text" id="txtCelular" name="Celular"
+                                <input class="form-control form-control-sm modelval" type="text" id="txtCelular" name="Celular"
                                     placeholder="Celular" />
                             </div>
                             <div class="mb-3 col-md-4">
@@ -56,9 +57,6 @@
                             <div class="mb-3 col-md-4">
                                 <label for="cboInmobiliaria" class="form-label">Inmobiliaria</label>
                                 <select id="cboInmobiliaria" class="form-select form-select-sm">
-                                    <option value="">Select</option>
-                                    <option value="en">La casa feliz</option>
-                                    <option value="fr">Grupo Zion</option>
                                 </select>
                             </div>
                         </div>

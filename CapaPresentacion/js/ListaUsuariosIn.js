@@ -45,14 +45,14 @@ function listaUsuariosP() {
             {
                 "data": "Estado", render: function (data) {
                     if (data === true)
-                        return '<span class="badge bg-primary">Activo</span>';
+                        return '<span class="badge bg-label-primary me-1">Activo</span>';
                     else
-                        return '<span class="badge bg-danger">No Activo</span>';
+                        return '<span class="badge bg-label-warning me-1">No Activo</span>';
                 }
             },
             {
                 "defaultContent": '<button class="btn btn-primary btn-editar btn-sm me-2"><i class="bx bx-edit-alt"></i></button>' +
-                    '<button class="btn btn-danger btn-eliminar btn-sm"><i class="bx bx-trash-alt"></i></button>',
+                    '<button class="btn btn-danger btn-eliminar btn-sm"><i class="bx bx-trash"></i></button>',
                 "orderable": false,
                 "searchable": false,
                 "width": "80px"

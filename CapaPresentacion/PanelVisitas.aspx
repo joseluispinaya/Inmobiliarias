@@ -17,7 +17,7 @@
         </ul>
         <div class="card mb-4">
             <h5 class="card-header">Profile Details</h5>
-            <div class="card-body">
+            <div class="card-body" id="loadinn">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="mt-2">
-                    <button type="button" class="btn btn-sm btn-primary me-2">Save changes</button>
+                    <button type="button" id="btnGuass" class="btn btn-sm btn-primary me-2">Guardar Registro</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
                 </div>
             </div>

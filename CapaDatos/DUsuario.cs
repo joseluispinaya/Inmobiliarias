@@ -154,7 +154,7 @@ namespace CapaDatos
                                     {
                                         NombreInmobiliaria = dr["NombreInmobiliaria"].ToString(),
                                         Propietario = dr["Propietario"].ToString(),
-                                        Correo = dr["Correo"].ToString()
+                                        Correo = dr["CorreoInmo"].ToString()
                                     },
                                     Rol = new ERol() { Descripcion = dr["DescripcionRol"].ToString() },
                                 });

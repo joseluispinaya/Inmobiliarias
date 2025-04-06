@@ -50,58 +50,20 @@
             <div class="tab-pane fade show active" id="navs-pills-justified-home" role="tabpanel">
                 <div class="row">
                     <div class="col-lg-12 mb-0">
-                        <table id="example" class="table table-striped" style="width:100%">
+                        <table id="tbInmobi" class="table table-striped nowrap" style="width: 100%">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>Id</th>
+                                    <th>Inmobiliario</th>
+                                    <th>Propietario</th>
+                                    <th>Correo</th>
+                                    <th>Celular</th>
+                                    <%--<th>Fecha</th>--%>
+                                    <th>Estado</th>
+                                    <th>Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011-04-25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011-07-25</td>
-                                    <td>$170,750</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009-01-12</td>
-                                    <td>$86,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2012-03-29</td>
-                                    <td>$433,060</td>
-                                </tr>
-                                <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    <td>2008-11-28</td>
-                                    <td>$162,700</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -110,35 +72,36 @@
             <div class="tab-pane fade" id="navs-pills-justified-profile" role="tabpanel">
                 <div class="row">
                     <div class="col-md">
-                        <div class="card">
+                        <div class="card" id="loaddddd">
                             <div class="card-header d-flex justify-content-between align-items-center" style="padding: 10px;">
                                 <h5 class="mb-0">Registrar Inmobiliaria</h5>
                                 <button type="button" id="btnGuardarR" class="btn btn-sm rounded-pill btn-success">Guardar</button>
                             </div>
                             <div class="card-body">
+                                <input id="txtIdInmobi" name="IdInmobiliaria" value="0" type="hidden" />
                                 <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label for="txtNombreIn" class="form-label">Inmobiliaria:</label>
-                                <input class="form-control form-control-sm" type="text" id="txtNombreIn" name="Nombre"
+                                <input class="form-control form-control-sm modelval" type="text" id="txtNombreIn" name="Inmobiliaria"
                                     autofocus />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtPropietario" class="form-label">Propietario:</label>
-                                <input class="form-control form-control-sm" type="text" name="Propietario" id="txtPropietario" />
+                                <input class="form-control form-control-sm modelval" type="text" name="Propietario" id="txtPropietario" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtCorreoIn" class="form-label">Correo:</label>
-                                <input class="form-control form-control-sm" type="text" id="txtCorreoIn" name="Correo"
+                                <input class="form-control form-control-sm modelval" type="text" id="txtCorreoIn" name="Correo"
                                     placeholder="correo@example.com" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtDireccion" class="form-label">Direccion:</label>
-                                <input type="text" class="form-control form-control-sm" id="txtDireccion"
+                                <input type="text" class="form-control form-control-sm modelval" id="txtDireccion"
                                     name="Direccion" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="txtCelular" class="form-label">Celular</label>
-                                <input class="form-control form-control-sm" type="text" id="txtCelular" name="Celular"
+                                <input class="form-control form-control-sm modelval" type="text" id="txtCelular" name="Celular"
                                     placeholder="Celular" />
                             </div>
                             <div class="mb-3 col-md-6">
