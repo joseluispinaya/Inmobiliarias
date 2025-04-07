@@ -38,6 +38,21 @@ namespace CapaNegocio
             return DUsuario.GetInstance().ListaUsuarios();
         }
 
+        public Respuesta<EUsuario> LoginUsuario(string Correo, string Clave, string Token)
+        {
+            return DUsuario.GetInstance().LoginUsuario(Correo, Clave, Token);
+        }
+
+        public Respuesta<string> ObtenerToken(int Iduser)
+        {
+            return DUsuario.GetInstance().ObtenerToken(Iduser);
+        }
+
+        public Respuesta<bool> VerificarUsuario(int Iduser)
+        {
+            return DUsuario.GetInstance().VerificarUsuario(Iduser);
+        }
+
         public Respuesta<List<ERol>> ListaRoles()
         {
             return DUsuario.GetInstance().ListaRoles();

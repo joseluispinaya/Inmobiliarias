@@ -109,7 +109,7 @@ namespace CapaPresentacion
                         return new Respuesta<bool>() { Estado = true, Mensaje = "Usuario registrado pero no se pudo enviar correo" };
                     }
 
-                    string confirmUrl = $"https://localhost:44311/ConfirmacionIn.aspx?id={item.IdUsuario}&token={obj.Token}";
+                    string confirmUrl = $"https://localhost:44311/ConfirmacionIn.aspx?id={item.IdUsuario}&token={item.Token}";
                     bool correoEnviado = EnvioCorreoU(obj.Correo, claveGenerada, confirmUrl);
                     if (!correoEnviado)
                     {

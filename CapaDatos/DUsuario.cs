@@ -147,9 +147,11 @@ namespace CapaDatos
                                     Foto = dr["Foto"].ToString(),
                                     IdInmobiliaria = Convert.ToInt32(dr["IdInmobiliaria"]),
                                     IdRol = Convert.ToInt32(dr["IdRol"]),
+                                    Token = dr["Token"].ToString(),
                                     Estado = Convert.ToBoolean(dr["Estado"]),
                                     FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()).ToString("dd/MM/yyyy"),
                                     VFechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
+                                    Verificado = Convert.ToBoolean(dr["Verificado"]),
                                     Inmobiliaria = new EInmobiliaria()
                                     {
                                         NombreInmobiliaria = dr["NombreInmobiliaria"].ToString(),
@@ -177,6 +179,169 @@ namespace CapaDatos
                     Estado = false,
                     Mensaje = "Ocurrió un error: " + ex.Message,
                     Data = null
+                };
+            }
+        }
+
+        public Respuesta<EUsuario> LoginUsuario(string Correo, string Clave, string Token)
+        {
+            try
+            {
+                EUsuario obj = null;
+
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    using (SqlCommand comando = new SqlCommand("usp_LogeoUsuarios", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.CommandTimeout = 30;
+                        comando.Parameters.AddWithValue("@Correo", Correo);
+                        comando.Parameters.AddWithValue("@Clave", Clave);
+                        comando.Parameters.AddWithValue("@Token", Token);
+
+                        con.Open();
+                        using (SqlDataReader dr = comando.ExecuteReader())
+                        {
+                            if (dr.Read() && dr["IdUsuario"] != DBNull.Value)
+                            {
+                                obj = new EUsuario
+                                {
+                                    IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
+                                    Nombres = dr["Nombres"].ToString(),
+                                    Apellidos = dr["Apellidos"].ToString(),
+                                    Correo = dr["Correo"].ToString(),
+                                    Clave = dr["Clave"].ToString(),
+                                    Celular = dr["Celular"].ToString(),
+                                    Foto = dr["Foto"].ToString(),
+                                    IdInmobiliaria = Convert.ToInt32(dr["IdInmobiliaria"]),
+                                    IdRol = Convert.ToInt32(dr["IdRol"]),
+                                    Token = dr["Token"].ToString(),
+                                    Estado = Convert.ToBoolean(dr["Estado"]),
+                                    Verificado = Convert.ToBoolean(dr["Verificado"]),
+                                    Inmobiliaria = new EInmobiliaria()
+                                    {
+                                        NombreInmobiliaria = dr["NombreInmobiliaria"].ToString(),
+                                        Correo = dr["CorreoInmo"].ToString(),
+                                        Propietario = dr["Propietario"].ToString()
+                                    },
+                                    Rol = new ERol() { Descripcion = dr["DescripcionRol"].ToString() },
+                                };
+                            }
+                        }
+                    }
+                }
+
+                return new Respuesta<EUsuario>
+                {
+                    Estado = obj != null,
+                    Data = obj,
+                    Mensaje = obj != null ? "Usuario obtenido correctamente" : "Credenciales incorrectas o usuario no encontrado"
+                };
+            }
+            catch (SqlException ex)
+            {
+                // Manejo de excepciones relacionadas con la base de datos
+                return new Respuesta<EUsuario>
+                {
+                    Estado = false,
+                    Mensaje = "Error en la base de datos: " + ex.Message,
+                    Data = null
+                };
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones generales
+                return new Respuesta<EUsuario>
+                {
+                    Estado = false,
+                    Mensaje = "Ocurrió un error inesperado: " + ex.Message,
+                    Data = null
+                };
+            }
+        }
+
+        public Respuesta<string> ObtenerToken(int Iduser)
+        {
+            try
+            {
+                var tokenSesion = string.Empty;
+
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    using (SqlCommand cmd = new SqlCommand("usp_ConsultaToken", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdUsuario", Iduser);
+
+                        SqlParameter outputParam = new SqlParameter("@Token", SqlDbType.NVarChar, 200) // Tamaño fijo en lugar de 'max'
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        tokenSesion = outputParam.Value.ToString();
+                    }
+                }
+
+                bool encontrado = !string.IsNullOrEmpty(tokenSesion) && tokenSesion != "Vacio";
+
+                return new Respuesta<string>
+                {
+                    Estado = encontrado,
+                    Valor = encontrado ? tokenSesion : "",
+                    Mensaje = encontrado ? "Token obtenido correctamente" : "No se encontró el token"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<string>
+                {
+                    Estado = false,
+                    Mensaje = "Ocurrió un error: " + ex.Message,
+                    Valor = ""
+                };
+            }
+        }
+
+        public Respuesta<bool> VerificarUsuario(int IdUser)
+        {
+            try
+            {
+                bool respuesta;
+                //bool respuesta = false;
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    using (SqlCommand cmd = new SqlCommand("usp_VerificarUsuario", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@IdUsuario", IdUser);
+
+                        SqlParameter outputParam = new SqlParameter("@Resultado", SqlDbType.Bit)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        cmd.Parameters.Add(outputParam);
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        respuesta = Convert.ToBoolean(outputParam.Value);
+                    }
+                }
+                return new Respuesta<bool>
+                {
+                    Estado = respuesta,
+                    Mensaje = respuesta ? "Se Verifico correctamente su cuenta" : "Error al Verificar intente mas tarde"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<bool>
+                {
+                    Estado = false,
+                    Mensaje = "Ocurrió un error: " + ex.Message
                 };
             }
         }

@@ -151,15 +151,18 @@
     <Content Include="Imagenes\sinfotou.png" />
     <Content Include="Imagenes\sinimg.png" />
     <Content Include="InmobiliariasIn.aspx" />
+    <Content Include="js\ConfirmacionIn.js" />
     <Content Include="js\InmobiliariasIn.js" />
     <Content Include="js\ListaPropietariosIn.js" />
     <Content Include="js\ListaUsuariosIn.js" />
+    <Content Include="js\LoginIn.js" />
     <Content Include="js\PanelVisitas.js" />
     <Content Include="js\PropiedadesIn.js" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
     <Content Include="ListaPropietariosIn.aspx" />
     <Content Include="ListaUsuariosIn.aspx" />
+    <Content Include="LoginIn.aspx" />
     <Content Include="PanelVisitas.aspx" />
     <Content Include="PropiedadesIn.aspx" />
     <Content Include="PropietariosIn.aspx" />
@@ -201,6 +204,13 @@
     </Compile>
     <Compile Include="ListaUsuariosIn.aspx.designer.cs">
       <DependentUpon>ListaUsuariosIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginIn.aspx.cs">
+      <DependentUpon>LoginIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginIn.aspx.designer.cs">
+      <DependentUpon>LoginIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageH.Master.cs">
       <DependentUpon>PageH.Master</DependentUpon>

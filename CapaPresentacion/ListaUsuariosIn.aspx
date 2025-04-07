@@ -31,9 +31,9 @@
                                                 <th>Id</th>
                                                 <th>Foto</th>
                                                 <th>Nombres</th>
-                                                <th>Correo</th>
+                                                <%--<th>Correo</th>--%>
                                                 <th>Celular</th>
-                                                <th>Fecha</th>
+                                                <th>Inmobiliaria</th>
                                                 <th>Estado</th>
                                                 <th>Acciones</th>
                                             </tr>

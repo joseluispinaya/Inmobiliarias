@@ -49,9 +49,11 @@
 <body>
     <div class="container-xxl container-p-y">
       <div class="misc-wrapper">
-        <h2 class="mb-2 mx-2">Su cuenta fue verificada :)</h2>
-        <p class="mb-4 mx-2">Inicie sesion con sus credenciales de acceso.</p>
-        <a href="Home.aspx" class="btn btn-primary">Confirmar Cuenta</a>
+        <h2 class="mb-2 mx-2">Confirmacion de cuenta :)</h2>
+          <input id="txtIdUsuar" value="0" type="hidden" />
+        <p class="mb-4 mx-2">Presione el boton para confirmar su cuenta.</p>
+          <a id="btnConfir" class="btn btn-primary">Confirmar Cuenta</a>
+        <%--<a href="LoginIn.aspx" class="btn btn-primary">Confirmar Cuenta</a>--%>
         <div class="mt-3">
           <img
             src="assets/img/illustrations/page-misc-error-light.png"
@@ -70,7 +72,7 @@
         href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
         target="_blank"
         class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
+        >Soporte</a
       >
     </div>
 
@@ -78,8 +80,12 @@
     <script src="assets/vendor/libs/popper/popper.js"></script>
     <script src="assets/vendor/js/bootstrap.js"></script>
     <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script src="assets/vendor/js/menu.js"></script>
     <script src="assets/js/main.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="js/ConfirmacionIn.js" type="text/javascript"></script>
 </body>
 </html>

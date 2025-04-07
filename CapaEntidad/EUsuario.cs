@@ -21,6 +21,7 @@ namespace CapaEntidad
         public bool Estado { get; set; }
         public string FechaRegistro { get; set; }
         public DateTime VFechaRegistro { get; set; }
+        public bool Verificado { get; set; }
         public EInmobiliaria Inmobiliaria { get; set; }
         public ERol Rol { get; set; }
         public string FullName => $"{Nombres} {Apellidos}";

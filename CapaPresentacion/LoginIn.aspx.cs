@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using CapaEntidad;
+using CapaNegocio;
+using System.Web.Services;
+
+namespace CapaPresentacion
+{
+	public partial class LoginIn : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
+
+		}
+
+        [WebMethod]
+        public static Respuesta<EUsuario> Iniciar(string Usuario, string Clave)
+        {
+            try
+            {
+                bool correoEnviado = ValidarEst(Usuario);
+
+                if (!correoEnviado)
+                {
+                    return new Respuesta<EUsuario>
+                    {
+                        Estado = false,
+                        Mensaje = "Debe validar su cuenta revise su correo"
+                    };
+                }
+
+                var tokenSesion = Guid.NewGuid().ToString();
+                var ClaveEncri = Utilidadesj.GetInstance().ConvertirSha256(Clave);
+                var obj = NUsuario.GetInstance().LoginUsuario(Usuario, ClaveEncri, tokenSesion);
+
+                // Si el usuario no existe o las credenciales son incorrectas
+                if (obj?.Data == null)
+                {
+                    return new Respuesta<EUsuario>
+                    {
+                        Estado = false,
+                        Mensaje = "Credenciales incorrectas o usuario no encontrado"
+                    };
+                }
+
+                // Obtener el token almacenado en la base de datos
+                var tokenDbResponse = NUsuario.GetInstance().ObtenerToken(obj.Data.IdUsuario);
+
+                return new Respuesta<EUsuario>
+                {
+                    Estado = tokenDbResponse.Estado, // Usa el estado real de la consulta del token
+                    Data = obj.Data,
+                    Valor = tokenDbResponse.Estado ? tokenDbResponse.Valor : "", // Evita devolver un token inválido
+                    Mensaje = tokenDbResponse.Estado ? "Inicio de sesión exitoso" : "No se pudo obtener el token"
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<EUsuario>
+                {
+                    Estado = false,
+                    Valor = "",
+                    Mensaje = "Ocurrió un error: " + ex.Message
+                };
+            }
+        }
+
+        private static bool ValidarEst(string correo)
+        {
+            try
+            {
+                Respuesta<List<EUsuario>> Lista = NUsuario.GetInstance().ListaUsuarios();
+                var listaUsuarios = Lista.Data;
+
+                var item = listaUsuarios.FirstOrDefault(x => x.Correo == correo);
+                if (item == null)
+                {
+                    return false;
+                }
+
+                return item.Verificado;
+
+            }
+            catch (Exception)
+            {
+                // Si ocurre un error en el envío del correo, retornar false
+                return false;
+            }
+        }
+    }
+}

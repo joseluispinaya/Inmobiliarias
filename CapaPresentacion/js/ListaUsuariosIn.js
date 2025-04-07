@@ -15,7 +15,7 @@ function listaUsuariosP() {
     table = $("#exampleu").DataTable({
         responsive: true,
         "ajax": {
-            "url": 'UsuariosIn.aspx/ObtenerUsuarios',
+            "url": 'ListaUsuariosIn.aspx/ListaUsuarios',
             "type": "POST",
             "contentType": "application/json; charset=utf-8",
             "dataType": "json",
@@ -33,21 +33,23 @@ function listaUsuariosP() {
         "columns": [
             { "data": "IdUsuario", "visible": false, "searchable": false },
             {
-                "data": "ImageFull", render: function (data) {
-                    return `<img src=${data} class="w-px-40 h-auto rounded-circle"/>`
+                "data": "ImageFull",
+                "orderable": false,
+                "searchable": false,
+                render: function (data) {
+                    return `<img src=${data} class="w-px-40 h-auto rounded-circle"/>`;
                 }
             },
             { "data": "FullName" },
-            //{ "data": "Apellidos" },
-            { "data": "Correo" },
+            //{ "data": "Correo" },
             { "data": "Celular" },
-            { "data": "FechaRegistro" },
+            { "data": "Inmobiliaria.NombreInmobiliaria" },
             {
-                "data": "Estado", render: function (data) {
+                "data": "Verificado", render: function (data) {
                     if (data === true)
-                        return '<span class="badge bg-label-primary me-1">Activo</span>';
+                        return '<span class="badge bg-label-primary me-1">Verificado</span>';
                     else
-                        return '<span class="badge bg-label-warning me-1">No Activo</span>';
+                        return '<span class="badge bg-label-warning me-1">No Verificado</span>';
                 }
             },
             {
@@ -59,7 +61,6 @@ function listaUsuariosP() {
             }
         ],
         "order": [[0, "desc"]],
-        //"dom": "frtip",
         "language": {
             "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
         }
