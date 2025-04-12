@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\chatbot.css" />
     <Content Include="assets\css\demo.css" />
     <Content Include="assets\img\avatars\1.png" />
     <Content Include="assets\img\avatars\5.png" />
@@ -156,8 +157,10 @@
     <Content Include="js\ListaPropietariosIn.js" />
     <Content Include="js\ListaUsuariosIn.js" />
     <Content Include="js\LoginIn.js" />
+    <Content Include="js\MasterPage.js" />
     <Content Include="js\PanelVisitas.js" />
     <Content Include="js\PropiedadesIn.js" />
+    <Content Include="js\PropietariosIn.js" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
     <Content Include="ListaPropietariosIn.aspx" />

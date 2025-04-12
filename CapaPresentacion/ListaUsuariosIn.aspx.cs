@@ -22,6 +22,7 @@ namespace CapaPresentacion
         {
             try
             {
+
                 Respuesta<List<EUsuario>> Lista = NUsuario.GetInstance().ListaUsuarios();
                 return Lista;
             }

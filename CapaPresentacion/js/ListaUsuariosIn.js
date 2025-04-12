@@ -24,6 +24,7 @@ function listaUsuariosP() {
             },
             "dataSrc": function (json) {
                 if (json.d.Estado) {
+                    //console.log(json.d.Data);
                     return json.d.Data; // apunta al array de datos
                 } else {
                     return [];

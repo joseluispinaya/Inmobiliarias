@@ -26,6 +26,8 @@ namespace CapaEntidad
         public bool Activo { get; set; }
         public string FechaRegistro { get; set; }
         public DateTime VFechaRegistro { get; set; }
+        public EDistrito DistritoPr { get; set; }
+        public ETipoPropiedad TipoPropiedad { get; set; }
         public List<EImagenProp> ListaImagenes { get; set; }
         public int NumeroImagenes => ListaImagenes == null ? 0 : ListaImagenes.Count;
 

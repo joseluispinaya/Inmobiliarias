@@ -18,6 +18,9 @@ namespace CapaEntidad
         public bool Estado { get; set; }
         public string FechaRegistro { get; set; }
         public DateTime VFechaRegistro { get; set; }
+        public int IdInmobiliaria { get; set; }
+        public List<EPropiedad> ListaPropiedades { get; set; }
+        public int NumeroPropiedades => ListaPropiedades == null ? 0 : ListaPropiedades.Count;
         public string FullNameProp => $"{Nombres} {Apellidos}";
     }
 }

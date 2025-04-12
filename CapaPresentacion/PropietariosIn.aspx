@@ -20,40 +20,40 @@
 
     <div class="row">
     <div class="col-lg-7">
-        <div class="card">
+        <div class="card" id="loaderi">
             <div class="card-header d-flex justify-content-between align-items-center" style="padding: 10px 20px 10px 20px;">
                 <h5 class="mb-0">Registrar Propietarios</h5>
                 <button type="button" id="btnGuardarPropie" class="btn btn-sm rounded-pill btn-success">Guardar</button>
             </div>
             <div class="card-body">
+                <input id="txtIdPropietario" name="IdPropietario" value="0" type="hidden" />
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="txtNombres" class="form-label">Nombres:</label>
-                        <input class="form-control form-control-sm" type="text" id="txtNombres" name="Nombres"
+                        <input class="form-control form-control-sm modelval" type="text" id="txtNombres" name="Nombres"
                             autofocus />
                     </div>
                     <div class="mb-3 col-md-4">
                         <label for="txtApellidos" class="form-label">Apellidos:</label>
-                        <input class="form-control form-control-sm" type="text" id="txtApellidos" name="Apellidos" />
+                        <input class="form-control form-control-sm modelval" type="text" id="txtApellidos" name="Apellidos" />
                     </div>
                     <div class="mb-3 col-md-4">
                         <label for="txtCi" class="form-label">Nro CI:</label>
-                        <input class="form-control form-control-sm" type="text" id="txtCi" name="Nro ci" />
+                        <input class="form-control form-control-sm modelval" type="text" id="txtCi" name="Nro ci" />
                     </div>
                     <div class="col-md-4">
                         <label for="txtDireccion" class="form-label">Direccion:</label>
-                        <input type="text" class="form-control form-control-sm" id="txtDireccion" name="Direccion" />
+                        <input type="text" class="form-control form-control-sm modelval" id="txtDireccion" name="Direccion" />
                     </div>
                     <div class="col-md-4">
                         <label for="txtCelular" class="form-label">Celular</label>
-                        <input class="form-control form-control-sm" type="text" id="txtCelular" name="Celular" />
+                        <input class="form-control form-control-sm modelval" type="text" id="txtCelular" name="Celular" />
                     </div>
                     <div class="col-md-4">
                         <label class="form-label" for="cboEstado">Estado</label>
                         <select id="cboEstado" class="form-select form-select-sm">
-                            <option value="">Select</option>
-                            <option value="Administrador">Administrador</option>
-                            <option value="Secretaria">Secretaria</option>
+                            <option value="1">Activo</option>
+                            <option value="0">No Activo</option>
                         </select>
                     </div>
 
@@ -82,4 +82,5 @@
 </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script src="js/PropietariosIn.js" type="text/javascript"></script>
 </asp:Content>
