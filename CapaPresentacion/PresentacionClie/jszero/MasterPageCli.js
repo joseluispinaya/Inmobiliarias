@@ -6,7 +6,7 @@ const chatbotToggler = document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 
 let esquemaSimplificado = [];
-const tokenOPENAI = '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';
+const tokenOPENAI = '';
 
 // Initialize user message and file data
 const userData = {
