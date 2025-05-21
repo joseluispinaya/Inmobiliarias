@@ -263,5 +263,175 @@ namespace CapaDatos
                 };
             }
         }
+
+        public Respuesta<EPropietario> PropietarioconPropiedadesId(int Idpropi)
+        {
+            try
+            {
+                EPropietario obj = null;
+
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    con.Open();
+
+                    // Obtener propietario
+                    using (SqlCommand comando = new SqlCommand("usp_BuscarPropietarioId", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@IdPropietario", Idpropi);
+
+                        using (SqlDataReader dr = comando.ExecuteReader())
+                        {
+                            if (dr.HasRows && dr.Read())
+                            {
+                                obj = new EPropietario
+                                {
+                                    IdPropietario = Convert.ToInt32(dr["IdPropietario"]),
+                                    IdRol = Convert.ToInt32(dr["IdRol"]),
+                                    NroCI = dr["NroCI"].ToString(),
+                                    Nombres = dr["Nombres"].ToString(),
+                                    Apellidos = dr["Apellidos"].ToString(),
+                                    Celular = dr["Celular"].ToString(),
+                                    Direccion = dr["Direccion"].ToString(),
+                                    Estado = Convert.ToBoolean(dr["Estado"]),
+                                    FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()).ToString("dd/MM/yyyy"),
+                                    VFechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
+                                    IdInmobiliaria = Convert.ToInt32(dr["IdInmobiliaria"]),
+                                    ListaPropiedades = new List<EPropiedad>() // Inicializamos la lista vacía
+                                };
+                            }
+                        }
+                    }
+
+                    // Si se encontró un propietario, buscar sus propiedades
+                    if (obj != null)
+                    {
+                        using (SqlCommand productoCmd = new SqlCommand("usp_ObtenerPropiedadesIdPropie", con))
+                        {
+                            productoCmd.CommandType = CommandType.StoredProcedure;
+                            productoCmd.Parameters.AddWithValue("@IdPropietario", obj.IdPropietario);
+
+                            using (SqlDataReader propiedDr = productoCmd.ExecuteReader())
+                            {
+                                while (propiedDr.Read())
+                                {
+                                    EPropiedad propiedadesPro = new EPropiedad()
+                                    {
+                                        IdPropiedad = Convert.ToInt32(propiedDr["IdPropiedad"]),
+                                        Codigo = propiedDr["Codigo"].ToString(),
+                                        Direccion = propiedDr["Direccion"].ToString(),
+                                        Precio = float.Parse(propiedDr["Precio"].ToString()),
+                                        Superficie = float.Parse(propiedDr["Superficie"].ToString()),
+                                        IdInmobiliaria = Convert.ToInt32(propiedDr["IdInmobiliaria"]),
+                                        IdDistrito = Convert.ToInt32(propiedDr["IdDistrito"]),
+                                        IdTipoPropi = Convert.ToInt32(propiedDr["IdTipoPropi"]),
+                                        Comentario = propiedDr["Comentario"].ToString(),
+                                        Estado = propiedDr["Estado"].ToString(),
+                                        Activo = Convert.ToBoolean(propiedDr["Activo"]),
+                                        DistritoPr = new EDistrito() { Distrito = propiedDr["Distrito"].ToString() },
+                                        TipoPropiedad = new ETipoPropiedad() { NombreTipo = propiedDr["NombreTipo"].ToString() }
+                                    };
+
+                                    obj.ListaPropiedades.Add(propiedadesPro);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                return new Respuesta<EPropietario>
+                {
+                    Estado = obj != null,
+                    Data = obj,
+                    Mensaje = obj != null ? "Propietario y sus propiedades obtenidos correctamente" : "El propietario no se encuentra registrado"
+                };
+            }
+            catch (SqlException ex)
+            {
+                return new Respuesta<EPropietario>
+                {
+                    Estado = false,
+                    Mensaje = "Error en la base de datos: " + ex.Message,
+                    Data = null
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<EPropietario>
+                {
+                    Estado = false,
+                    Mensaje = "Ocurrió un error inesperado: " + ex.Message,
+                    Data = null
+                };
+            }
+        }
+
+        public Respuesta<EPropietario> BuscarPropietarioCi(int IdInmobi, string NroCi)
+        {
+            try
+            {
+                EPropietario obj = null;
+
+                using (SqlConnection con = ConexionBD.GetInstance().ConexionDB())
+                {
+                    using (SqlCommand comando = new SqlCommand("usp_BuscarPropietarioCI", con))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        //comando.CommandTimeout = 30;
+                        comando.Parameters.AddWithValue("@IdInmobiliaria", IdInmobi);
+                        comando.Parameters.AddWithValue("@NroCI", NroCi);
+
+                        con.Open();
+                        using (SqlDataReader dr = comando.ExecuteReader())
+                        {
+                            if (dr.HasRows && dr.Read())
+                            {
+                                obj = new EPropietario
+                                {
+                                    IdPropietario = Convert.ToInt32(dr["IdPropietario"]),
+                                    IdRol = Convert.ToInt32(dr["IdRol"]),
+                                    NroCI = dr["NroCI"].ToString(),
+                                    Nombres = dr["Nombres"].ToString(),
+                                    Apellidos = dr["Apellidos"].ToString(),
+                                    Celular = dr["Celular"].ToString(),
+                                    Direccion = dr["Direccion"].ToString(),
+                                    Estado = Convert.ToBoolean(dr["Estado"]),
+                                    FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()).ToString("dd/MM/yyyy"),
+                                    VFechaRegistro = Convert.ToDateTime(dr["FechaRegistro"].ToString()),
+                                    IdInmobiliaria = Convert.ToInt32(dr["IdInmobiliaria"])
+                                };
+                            }
+                        }
+                    }
+                }
+
+                return new Respuesta<EPropietario>
+                {
+                    Estado = obj != null,
+                    Data = obj,
+                    Mensaje = obj != null ? "Propietario obtenido correctamente" : "El nro de ci no se encuentra registrado"
+                };
+            }
+            catch (SqlException ex)
+            {
+                // Manejo de excepciones relacionadas con la base de datos
+                return new Respuesta<EPropietario>
+                {
+                    Estado = false,
+                    Mensaje = "Error en la base de datos: " + ex.Message,
+                    Data = null
+                };
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones generales
+                return new Respuesta<EPropietario>
+                {
+                    Estado = false,
+                    Mensaje = "Ocurrió un error inesperado: " + ex.Message,
+                    Data = null
+                };
+            }
+        }
     }
 }

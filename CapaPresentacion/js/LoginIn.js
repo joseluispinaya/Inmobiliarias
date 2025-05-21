@@ -36,9 +36,9 @@ function loginUsuarioLoad() {
             $.LoadingOverlay("hide");
             if (response.d.Estado) {
 
-                //sessionStorage.setItem('tokenSesion', response.d.Valor);
+                sessionStorage.setItem('token', response.d.Valor);
                 // Almacenar el objeto usuario completo en sessionStorage
-                //sessionStorage.setItem('usuarioSt', JSON.stringify(response.d.Data));
+                sessionStorage.setItem('usuarioIn', JSON.stringify(response.d.Data));
                 $("#txtemail").val("");
                 $("#txtpassword").val("");
                 window.location.href = 'Home.aspx';

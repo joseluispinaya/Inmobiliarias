@@ -19,6 +19,20 @@ namespace CapaPresentacion
 		}
 
         [WebMethod]
+        public static Respuesta<string> ValidarToken(int IdUsu)
+        {
+            try
+            {
+                Respuesta<string> tokendb = NUsuario.GetInstance().ObtenerToken(IdUsu);
+                return tokendb;
+            }
+            catch (Exception)
+            {
+                return new Respuesta<string>() { Estado = false };
+            }
+        }
+
+        [WebMethod]
         public static Respuesta<List<TablasEsquema>> ObtenerEsquemaBD()
         {
             try

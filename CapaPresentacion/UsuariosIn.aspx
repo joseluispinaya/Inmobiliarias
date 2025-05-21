@@ -112,7 +112,7 @@
 
 
     <div class="modal fade" id="largeModal" tabindex="-1" aria-hidden="false">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel3">Modal title</h5>
@@ -122,7 +122,7 @@
                 <div class="row">
                     <div class="col mb-3">
                         <label for="nameLarge" class="form-label">Name</label>
-                        <input type="text" id="nameLarge" class="form-control" placeholder="Enter Name" />
+                        <input type="text" id="nameLarge" class="form-control form-control-sm" placeholder="Enter Name" />
                     </div>
                 </div>
                 <div class="row g-2">

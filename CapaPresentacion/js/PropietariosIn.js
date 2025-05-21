@@ -17,6 +17,8 @@ $(document).ready(function () {
 })
 
 function dataRegistrarProp() {
+    const usuario = JSON.parse(sessionStorage.getItem('usuarioIn'));
+
     const modelo = structuredClone(MODELO_BASE);
     modelo["IdPropietario"] = parseInt($("#txtIdPropietario").val());
     modelo["IdRol"] = 2;
@@ -26,7 +28,7 @@ function dataRegistrarProp() {
     modelo["Celular"] = $("#txtCelular").val().trim();
     modelo["Direccion"] = $("#txtDireccion").val().trim();
     modelo["Estado"] = true;
-    modelo["IdInmobiliaria"] = 1;
+    modelo["IdInmobiliaria"] = parseInt(usuario.IdInmobiliaria);
 
     var request = {
         oPropietario: modelo

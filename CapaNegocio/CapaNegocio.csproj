@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="NChatBot.cs" />
     <Compile Include="NInmobiliaria.cs" />
+    <Compile Include="NPropiedad.cs" />
     <Compile Include="NPropietario.cs" />
     <Compile Include="NUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

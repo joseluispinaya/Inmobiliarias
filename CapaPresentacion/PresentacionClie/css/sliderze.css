@@ -1,0 +1,51 @@
+﻿.wrapperz {
+    width: 100%;
+}
+
+.carouselz {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+    .carouselz .cardz {
+        background: #fff;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    }
+
+        .carouselz .cardz .imgz {
+            /* height: 200px; */
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+            .carouselz .cardz .imgz img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot {
+    height: 15px !important;
+    width: 45px !important;
+    margin: 0 5px !important;
+    outline: none !important;
+    border-radius: 14px !important;
+    border: 2px solid #0072bc !important;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2) !important;
+    transition: all 0.3s ease !important;
+    position: static !important;
+}
+
+    .owl-dot.active,
+    .owl-dot:hover {
+        background: #0072bc !important;
+    }

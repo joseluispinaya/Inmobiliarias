@@ -147,13 +147,21 @@
     <Content Include="assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.js" />
     <Content Include="assets\vendor\libs\popper\popper.js" />
     <Content Include="ConfirmacionIn.aspx" />
+    <Content Include="ConsultasIn.aspx" />
+    <Content Include="DetallePropiedadIn.aspx" />
+    <Content Include="DetallePropietarioIn.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Imagenes\sinfotoo.png" />
     <Content Include="Imagenes\sinfotou.png" />
     <Content Include="Imagenes\sinimg.png" />
+    <Content Include="ImagePropiedad\logogm.jpg" />
     <Content Include="InmobiliariasIn.aspx" />
     <Content Include="js\ConfirmacionIn.js" />
+    <Content Include="js\ConsultasIn.js" />
+    <Content Include="js\DetallePropiedadIn.js" />
+    <Content Include="js\DetallePropietarioIn.js" />
     <Content Include="js\InmobiliariasIn.js" />
+    <Content Include="js\ListaPropiedadesIn.js" />
     <Content Include="js\ListaPropietariosIn.js" />
     <Content Include="js\ListaUsuariosIn.js" />
     <Content Include="js\LoginIn.js" />
@@ -163,10 +171,103 @@
     <Content Include="js\PropietariosIn.js" />
     <Content Include="js\Pruebas.js" />
     <Content Include="js\UsuariosIn.js" />
+    <Content Include="ListaPropiedadesIn.aspx" />
     <Content Include="ListaPropietariosIn.aspx" />
     <Content Include="ListaUsuariosIn.aspx" />
     <Content Include="LoginIn.aspx" />
     <Content Include="PanelVisitas.aspx" />
+    <Content Include="PresentacionClie\css\ajax-loader.gif" />
+    <Content Include="PresentacionClie\css\animate.css" />
+    <Content Include="PresentacionClie\css\aos.css" />
+    <Content Include="PresentacionClie\css\bootstrap-datepicker.css" />
+    <Content Include="PresentacionClie\css\bootstrap.min.css" />
+    <Content Include="PresentacionClie\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="PresentacionClie\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="PresentacionClie\css\chatzero.css" />
+    <Content Include="PresentacionClie\css\css\bootstrap-reboot.css" />
+    <Content Include="PresentacionClie\css\css\mixins\_text-hide.css" />
+    <Content Include="PresentacionClie\css\flaticon.css" />
+    <Content Include="PresentacionClie\css\icomoon.css" />
+    <Content Include="PresentacionClie\css\ionicons.min.css" />
+    <Content Include="PresentacionClie\css\jquery.timepicker.css" />
+    <Content Include="PresentacionClie\css\magnific-popup.css" />
+    <Content Include="PresentacionClie\css\open-iconic-bootstrap.min.css" />
+    <Content Include="PresentacionClie\css\owl.carousel.min.css" />
+    <Content Include="PresentacionClie\css\owl.theme.default.min.css" />
+    <Content Include="PresentacionClie\css\sliderze.css" />
+    <Content Include="PresentacionClie\css\style.css" />
+    <Content Include="PresentacionClie\css\zerochatbot.css" />
+    <Content Include="PresentacionClie\DetallePropiedadC.aspx" />
+    <Content Include="PresentacionClie\fonts\flaticon\backup.txt" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\flaticon.css" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\flaticon.html" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\Flaticon.svg" />
+    <Content Include="PresentacionClie\fonts\icomoon\icomoon.svg" />
+    <Content Include="PresentacionClie\fonts\ionicons\css\ionicons.min.css" />
+    <Content Include="PresentacionClie\fonts\ionicons\fonts\ionicons.svg" />
+    <Content Include="PresentacionClie\fonts\open-iconic\open-iconic.svg" />
+    <Content Include="PresentacionClie\images\about.jpg" />
+    <Content Include="PresentacionClie\images\bg_1.jpg" />
+    <Content Include="PresentacionClie\images\bg_2.jpg" />
+    <Content Include="PresentacionClie\images\image_1.jpg" />
+    <Content Include="PresentacionClie\images\image_2.jpg" />
+    <Content Include="PresentacionClie\images\image_3.jpg" />
+    <Content Include="PresentacionClie\images\image_4.jpg" />
+    <Content Include="PresentacionClie\images\image_5.jpg" />
+    <Content Include="PresentacionClie\images\image_6.jpg" />
+    <Content Include="PresentacionClie\images\image_7.jpg" />
+    <Content Include="PresentacionClie\images\image_8.jpg" />
+    <Content Include="PresentacionClie\images\listing-1.jpg" />
+    <Content Include="PresentacionClie\images\listing-2.jpg" />
+    <Content Include="PresentacionClie\images\listing-3.jpg" />
+    <Content Include="PresentacionClie\images\listing-4.jpg" />
+    <Content Include="PresentacionClie\images\listing-5.jpg" />
+    <Content Include="PresentacionClie\images\listing-6.jpg" />
+    <Content Include="PresentacionClie\images\loc.png" />
+    <Content Include="PresentacionClie\images\person_1.jpg" />
+    <Content Include="PresentacionClie\images\person_2.jpg" />
+    <Content Include="PresentacionClie\images\person_3.jpg" />
+    <Content Include="PresentacionClie\images\person_4.jpg" />
+    <Content Include="PresentacionClie\images\team-1.jpg" />
+    <Content Include="PresentacionClie\images\team-2.jpg" />
+    <Content Include="PresentacionClie\images\team-3.jpg" />
+    <Content Include="PresentacionClie\images\team-4.jpg" />
+    <Content Include="PresentacionClie\images\team-5.jpg" />
+    <Content Include="PresentacionClie\images\team-6.jpg" />
+    <Content Include="PresentacionClie\images\team-7.jpg" />
+    <Content Include="PresentacionClie\images\team-8.jpg" />
+    <Content Include="PresentacionClie\images\work-1.jpg" />
+    <Content Include="PresentacionClie\images\work-2.jpg" />
+    <Content Include="PresentacionClie\images\work-3.jpg" />
+    <Content Include="PresentacionClie\images\work-4.jpg" />
+    <Content Include="PresentacionClie\images\work-5.jpg" />
+    <Content Include="PresentacionClie\images\work-6.jpg" />
+    <Content Include="PresentacionClie\images\work-7.jpg" />
+    <Content Include="PresentacionClie\images\work-8.jpg" />
+    <Content Include="PresentacionClie\images\work-9.jpg" />
+    <Content Include="PresentacionClie\InicioPage.aspx" />
+    <Content Include="PresentacionClie\jszero\DetallePropiedadC.js" />
+    <Content Include="PresentacionClie\jszero\InicioPage.js" />
+    <Content Include="PresentacionClie\jszero\MasterPageCli.js" />
+    <Content Include="PresentacionClie\js\aos.js" />
+    <Content Include="PresentacionClie\js\bootstrap-datepicker.js" />
+    <Content Include="PresentacionClie\js\bootstrap.min.js" />
+    <Content Include="PresentacionClie\js\chatze.js" />
+    <Content Include="PresentacionClie\js\google-map.js" />
+    <Content Include="PresentacionClie\js\jquery-3.2.1.min.js" />
+    <Content Include="PresentacionClie\js\jquery-migrate-3.0.1.min.js" />
+    <Content Include="PresentacionClie\js\jquery.animateNumber.min.js" />
+    <Content Include="PresentacionClie\js\jquery.easing.1.3.js" />
+    <Content Include="PresentacionClie\js\jquery.magnific-popup.min.js" />
+    <Content Include="PresentacionClie\js\jquery.min.js" />
+    <Content Include="PresentacionClie\js\jquery.stellar.min.js" />
+    <Content Include="PresentacionClie\js\jquery.timepicker.min.js" />
+    <Content Include="PresentacionClie\js\jquery.waypoints.min.js" />
+    <Content Include="PresentacionClie\js\main.js" />
+    <Content Include="PresentacionClie\js\owl.carousel.min.js" />
+    <Content Include="PresentacionClie\js\popper.min.js" />
+    <Content Include="PresentacionClie\js\range.js" />
+    <Content Include="PresentacionClie\js\scrollax.min.js" />
     <Content Include="PropiedadesIn.aspx" />
     <Content Include="PropietariosIn.aspx" />
     <Content Include="UsuariosIn.aspx" />
@@ -179,6 +280,27 @@
     </Compile>
     <Compile Include="ConfirmacionIn.aspx.designer.cs">
       <DependentUpon>ConfirmacionIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasIn.aspx.cs">
+      <DependentUpon>ConsultasIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultasIn.aspx.designer.cs">
+      <DependentUpon>ConsultasIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallePropiedadIn.aspx.cs">
+      <DependentUpon>DetallePropiedadIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallePropiedadIn.aspx.designer.cs">
+      <DependentUpon>DetallePropiedadIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallePropietarioIn.aspx.cs">
+      <DependentUpon>DetallePropietarioIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallePropietarioIn.aspx.designer.cs">
+      <DependentUpon>DetallePropietarioIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -193,6 +315,13 @@
     </Compile>
     <Compile Include="InmobiliariasIn.aspx.designer.cs">
       <DependentUpon>InmobiliariasIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPropiedadesIn.aspx.cs">
+      <DependentUpon>ListaPropiedadesIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaPropiedadesIn.aspx.designer.cs">
+      <DependentUpon>ListaPropiedadesIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListaPropietariosIn.aspx.cs">
       <DependentUpon>ListaPropietariosIn.aspx</DependentUpon>
@@ -229,6 +358,27 @@
     <Compile Include="PanelVisitas.aspx.designer.cs">
       <DependentUpon>PanelVisitas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PresentacionClie\DetallePropiedadC.aspx.cs">
+      <DependentUpon>DetallePropiedadC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PresentacionClie\DetallePropiedadC.aspx.designer.cs">
+      <DependentUpon>DetallePropiedadC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PresentacionClie\InicioPage.aspx.cs">
+      <DependentUpon>InicioPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PresentacionClie\InicioPage.aspx.designer.cs">
+      <DependentUpon>InicioPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PresentacionClie\PageClien.Master.cs">
+      <DependentUpon>PageClien.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PresentacionClie\PageClien.Master.designer.cs">
+      <DependentUpon>PageClien.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropiedadesIn.aspx.cs">
       <DependentUpon>PropiedadesIn.aspx</DependentUpon>
@@ -260,6 +410,33 @@
     <Content Include="assets\vendor\fonts\boxicons\boxicons.woff2" />
     <None Include="packages.config" />
     <Content Include="PageH.Master" />
+    <Content Include="PresentacionClie\PageClien.Master" />
+    <Content Include="PresentacionClie\css\.DS_Store" />
+    <Content Include="PresentacionClie\css\bootstrap\.DS_Store" />
+    <Content Include="PresentacionClie\css\css\.DS_Store" />
+    <Content Include="PresentacionClie\fonts\.DS_Store" />
+    <Content Include="PresentacionClie\fonts\flaticon\.DS_Store" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\Flaticon.eot" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\Flaticon.ttf" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\Flaticon.woff" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\Flaticon.woff2" />
+    <Content Include="PresentacionClie\fonts\flaticon\font\_flaticon.scss" />
+    <Content Include="PresentacionClie\fonts\flaticon\license\license.pdf" />
+    <Content Include="PresentacionClie\fonts\icomoon\icomoon.eot" />
+    <Content Include="PresentacionClie\fonts\icomoon\icomoon.ttf" />
+    <Content Include="PresentacionClie\fonts\icomoon\icomoon.woff" />
+    <Content Include="PresentacionClie\fonts\ionicons\css\_ionicons.scss" />
+    <Content Include="PresentacionClie\fonts\ionicons\fonts\.DS_Store" />
+    <Content Include="PresentacionClie\fonts\ionicons\fonts\ionicons.eot" />
+    <Content Include="PresentacionClie\fonts\ionicons\fonts\ionicons.ttf" />
+    <Content Include="PresentacionClie\fonts\ionicons\fonts\ionicons.woff" />
+    <Content Include="PresentacionClie\fonts\ionicons\fonts\ionicons.woff2" />
+    <Content Include="PresentacionClie\fonts\open-iconic\open-iconic.eot" />
+    <Content Include="PresentacionClie\fonts\open-iconic\open-iconic.otf" />
+    <Content Include="PresentacionClie\fonts\open-iconic\open-iconic.ttf" />
+    <Content Include="PresentacionClie\fonts\open-iconic\open-iconic.woff" />
+    <Content Include="PresentacionClie\images\.DS_Store" />
+    <Content Include="PresentacionClie\js\.DS_Store" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

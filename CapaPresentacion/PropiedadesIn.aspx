@@ -12,26 +12,30 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
     <div class="row">
     <div class="col-xxl">
-        <div class="card mb-2">
+        <div class="card mb-2" id="loaadd">
             <div class="card-body">
+                <input id="txtIdPropie" name="IdPropietario" value="0" type="hidden" />
                 <div class="row">
-                    <label class="col-sm-2 col-form-label" for="txtFullname">Propietario</label>
-                    <div class="col-sm-4">
+                    <label class="col-sm-2 col-form-label" for="txtNrociP">Numero de CI</label>
+                    <div class="col-sm-2">
                         <div class="input-group input-group-merge input-group-sm">
-                            <span id="basic-fullname" class="input-group-text"><i
+                            <span id="basic-nroci" class="input-group-text"><i
                                     class="bx bx-user"></i></span>
-                            <input type="text" class="form-control" id="txtFullname"
-                                aria-label="John Doe"
-                                aria-describedby="basic-fullname" readonly />
+                            <input type="text" class="form-control" id="txtNrociP"
+                                aria-label="Nro CI"
+                                aria-describedby="basic-nroci" />
                         </div>
                     </div>
                     <div class="col-sm-2">
+                        <button type="button" id="btnBuscarProCi" class="btn btn-sm btn-success">Buscar</button>
+                    </div>
+                    <div class="col-sm-4">
                         <div class="input-group input-group-merge input-group-sm">
-                            <span id="basic-ci" class="input-group-text"><i
-                                    class="bx bx-phone"></i></span>
-                            <input type="text" id="txtnrocilprop" class="form-control phone-mask"
-                                placeholder="658 799 8941" aria-label="658 799 8941"
-                                aria-describedby="basic-ci" readonly />
+                            <span id="basic-fullnombre" class="input-group-text"><i
+                                class="bx bx-user"></i></span>
+                            <input type="text" class="form-control" id="txtFullnombre"
+                                aria-label="Propietario"
+                                aria-describedby="basic-fullnombre" readonly style="background-color: #fff;" />
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -39,19 +43,16 @@
                             <span id="basic-fono" class="input-group-text"><i
                                     class="bx bx-phone"></i></span>
                             <input type="text" id="txtcelprop" class="form-control phone-mask"
-                                placeholder="658 799 8941" aria-label="658 799 8941"
-                                aria-describedby="basic-fono" readonly />
+                                aria-label="Nro celular"
+                                aria-describedby="basic-fono" readonly style="background-color: #fff;" />
                         </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <button type="button" class="btn btn-sm btn-primary">Guardar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <div class="row">
+    <div class="row" id="loadprpi">
     <div class="col-xl">
         <div class="card mb-4">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -59,29 +60,23 @@
                 <small class="text-muted float-end">Inmobiliarias</small>
             </div>
             <div class="card-body">
+                <input id="txtIdPropiedad" name="IdPropiedad" value="0" type="hidden" />
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <label class="form-label" for="cboPropie">Estado</label>
-                        <select id="cboPropie" class="form-select form-select-sm">
-                            <option value="">Select</option>
-                            <option value="Administrador">Activo</option>
-                            <option value="Secretaria">Secretaria</option>
+                        <label class="form-label" for="cboEstadop">Estado</label>
+                        <select id="cboEstadop" class="form-select form-select-sm">
+                            <option value="1">Activo</option>
+                            <option value="0">No Activo</option>
                         </select>
                     </div>
                     <div class="mb-3 col-md-4">
                         <label for="cboTipoprop" class="form-label">Tipo Propiedad</label>
                         <select id="cboTipoprop" class="form-select form-select-sm">
-                            <option value="">Select</option>
-                            <option value="en">Departamento</option>
-                            <option value="fr">Grupo Zion</option>
                         </select>
                     </div>
                     <div class="mb-3 col-md-4">
                         <label for="cboDistrito" class="form-label">Distrito</label>
                         <select id="cboDistrito" class="form-select form-select-sm">
-                            <option value="">Select</option>
-                            <option value="en">Distrito 1</option>
-                            <option value="fr">Grupo Zion</option>
                         </select>
                     </div>
                     <div class="mb-3 col-md-4">
@@ -121,7 +116,7 @@
                         <div class="input-group input-group-merge input-group-sm">
                             <span id="basic-icon-default-direccion" class="input-group-text"><i
                                     class="bx bx-buildings"></i></span>
-                            <input type="text" class="form-control" id="txtDireccion" placeholder="Direccion"
+                            <input type="text" class="form-control modelval" id="txtDireccion" placeholder="Direccion"
                                 aria-label="Direccion" aria-describedby="basic-icon-default-direccion" />
                         </div>
                 </div>
@@ -130,7 +125,7 @@
                         <div class="input-group input-group-merge input-group-sm">
                             <span id="basic-Virtual" class="input-group-text"><i
                                     class="bx bx-link"></i></span>
-                            <input type="text" class="form-control" id="txtVirtual" placeholder="URL"
+                            <input type="text" class="form-control modelval" id="txtVirtual" placeholder="URL"
                                 aria-label="URL" aria-describedby="basic-Virtual" />
                         </div>
                 </div>

@@ -1,10 +1,74 @@
 ﻿
 let esquemaSimplificado = [];
-const tokenOPENAI = 'xxxxxxx';
+const tokenOPENAI = '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';
 
 $(document).ready(function () {
-    obtenerEsquema();
+    const tokenSesion = sessionStorage.getItem('token');
+    const usuarioL = sessionStorage.getItem('usuarioIn');
+
+    if (tokenSesion && usuarioL) {
+        obtenerEsquema();
+        const usuario = JSON.parse(usuarioL);
+        obtenerDetalleUsuarioRP(usuario.IdUsuario);
+    } else {
+        window.location.href = 'LoginIn.aspx';
+    }
+
+    //obtenerEsquema();
 });
+
+// Manejo de cierre de sesión
+$('#salirSis').on('click', function (e) {
+    e.preventDefault();
+    CerrarSesion();
+});
+
+// Obtener y mostrar detalle del usuario
+function obtenerDetalleUsuarioRP(idUsu) {
+    $.ajax({
+        type: "POST",
+        url: "Home.aspx/ValidarToken",
+        data: JSON.stringify({ IdUsu: idUsu }),
+        contentType: 'application/json; charset=utf-8',
+        dataType: "json",
+        success: function (response) {
+            if (response.d.Estado) {
+                const tokenSes = sessionStorage.getItem('token');
+
+                if (tokenSes !== response.d.Valor) {
+                    CerrarSesion();
+                    return;
+                }
+
+                const usuarioL = sessionStorage.getItem('usuarioIn');
+                if (usuarioL) {
+                    const usuario = JSON.parse(usuarioL);
+
+                    $("#lblApeUsu").text(usuario.Apellidos);
+                    $("#lblRolus").text(usuario.Rol.Descripcion); // Cambiado de append() a text()
+
+                    $("#fotoUsuari").attr("src", usuario.ImageFull);
+                    $("#fotoUsdos").attr("src", usuario.ImageFull);
+                } else {
+                    console.error('No se encontró información del usuario en sessionStorage.');
+                    window.location.href = 'LoginIn.aspx';
+                }
+            } else {
+                window.location.href = 'LoginIn.aspx';
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.error("Error al validar token:", xhr.status, xhr.responseText, thrownError);
+            window.location.href = 'LoginIn.aspx';
+        }
+    });
+}
+
+// Función para cerrar sesión
+function CerrarSesion() {
+    sessionStorage.clear();
+    window.location.replace('LoginIn.aspx');
+}
 
 function obtenerEsquema() {
     $.ajax({

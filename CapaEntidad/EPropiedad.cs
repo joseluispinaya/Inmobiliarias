@@ -28,7 +28,11 @@ namespace CapaEntidad
         public DateTime VFechaRegistro { get; set; }
         public EDistrito DistritoPr { get; set; }
         public ETipoPropiedad TipoPropiedad { get; set; }
+        // para inicio
+        public EInmobiliaria InmobiliariaDe { get; set; }
         public List<EImagenProp> ListaImagenes { get; set; }
+        public string PrecioCade => $"Bs/ {Precio:F2}";
+        public string MetrosCuad => $"{Superficie:F2} MTS2";
         public int NumeroImagenes => ListaImagenes == null ? 0 : ListaImagenes.Count;
 
         public string FirstImage
@@ -37,7 +41,7 @@ namespace CapaEntidad
             {
                 if (ListaImagenes == null || ListaImagenes.Count == 0)
                 {
-                    return $"/Imagenes/sinfotoo.png";
+                    return $"/Imagenes/sinimg.png";
                 }
 
                 return ListaImagenes.FirstOrDefault().UrlImagen;
