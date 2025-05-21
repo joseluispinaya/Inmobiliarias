@@ -5,6 +5,7 @@ const sendMessage = document.querySelector("#send-message");
 const chatbotToggler = document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 
+
 let esquemaSimplificado = [];
 const tokenOPENAI = '';
 
