@@ -1,6 +1,6 @@
 ﻿
 let esquemaSimplificado = [];
-const tokenOPENAI = '';
+const tokenOPENAI = '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';
 
 $(document).ready(function () {
     const tokenSesion = sessionStorage.getItem('token');

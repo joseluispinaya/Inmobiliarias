@@ -22,6 +22,17 @@ namespace CapaPresentacion
         {
             try
             {
+                bool esAdmin = ValidarAdmin(Usuario);
+                if (!esAdmin)
+                {
+                    return new Respuesta<EUsuario>
+                    {
+                        Estado = false,
+                        Valor = "admin",
+                        Mensaje = "Debe validar su cuenta revise su correo"
+                    };
+                }
+
                 bool correoEnviado = ValidarEst(Usuario);
 
                 if (!correoEnviado)
@@ -29,6 +40,7 @@ namespace CapaPresentacion
                     return new Respuesta<EUsuario>
                     {
                         Estado = false,
+                        Valor = "",
                         Mensaje = "Debe validar su cuenta revise su correo"
                     };
                 }
@@ -43,6 +55,7 @@ namespace CapaPresentacion
                     return new Respuesta<EUsuario>
                     {
                         Estado = false,
+                        Valor = "",
                         Mensaje = "Credenciales incorrectas o usuario no encontrado"
                     };
                 }
@@ -69,6 +82,29 @@ namespace CapaPresentacion
             }
         }
 
+        private static bool ValidarAdmin(string correo)
+        {
+            try
+            {
+                Respuesta<List<EUsuario>> Lista = NUsuario.GetInstance().ListaUsuarios();
+                var listaUsuarios = Lista.Data;
+
+                var item = listaUsuarios.FirstOrDefault(x => x.Correo == correo);
+                if (item == null)
+                {
+                    return false;
+                }
+
+                return true;
+
+            }
+            catch (Exception)
+            {
+                // Si ocurre un error en el envío del correo, retornar false
+                return false;
+            }
+        }
+
         private static bool ValidarEst(string correo)
         {
             try
@@ -89,6 +125,28 @@ namespace CapaPresentacion
             {
                 // Si ocurre un error en el envío del correo, retornar false
                 return false;
+            }
+        }
+
+        // saber si es administrador
+        [WebMethod]
+        public static Respuesta<EAdministrador> LogeoAdmin(string Usuario, string Clave)
+        {
+            try
+            {
+                //var ClaveEncri = Utilidadesj.GetInstance().ConvertirSha256(Clave);
+                var obj = NUsuario.GetInstance().LoginAdmin(Usuario, Clave);
+
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                return new Respuesta<EAdministrador>
+                {
+                    Estado = false,
+                    Valor = "",
+                    Mensaje = "Ocurrió un error: " + ex.Message
+                };
             }
         }
     }

@@ -125,7 +125,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">-ARL-</span>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -143,7 +143,7 @@
                 <div data-i18n="Analytics">Inicio</div>
               </a>
             </li>
-              <li class="menu-item">
+              <%--<li class="menu-item">
                   <a href="javascript:void(0);" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons bx bx-file"></i>
                       <div data-i18n="Layouts">Usuarios</div>
@@ -161,9 +161,9 @@
                           </a>
                       </li>
                   </ul>
-              </li>
+              </li>--%>
 
-              <li class="menu-item">
+              <%--<li class="menu-item">
                   <a href="javascript:void(0);" class="menu-link menu-toggle">
                       <i class="menu-icon tf-icons bx bx-collection"></i>
                       <div data-i18n="Layouts">Configuracion</div>
@@ -181,7 +181,7 @@
                           </a>
                       </li>
                   </ul>
-              </li>
+              </li>--%>
 
             <!-- Layouts -->
             <li class="menu-item">
@@ -393,7 +393,7 @@
                     document.write(new Date().getFullYear());
                   </script>
                   , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">EMI</a>
                 </div>
                 <div>
                   <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>

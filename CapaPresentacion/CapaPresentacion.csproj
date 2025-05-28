@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administrador.aspx" />
+    <Content Include="assets\css\carzero.css" />
     <Content Include="assets\css\chatbot.css" />
     <Content Include="assets\css\demo.css" />
     <Content Include="assets\img\avatars\1.png" />
@@ -151,11 +153,13 @@
     <Content Include="DetallePropiedadIn.aspx" />
     <Content Include="DetallePropietarioIn.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Imagenes\logochoca.png" />
     <Content Include="Imagenes\sinfotoo.png" />
     <Content Include="Imagenes\sinfotou.png" />
     <Content Include="Imagenes\sinimg.png" />
     <Content Include="ImagePropiedad\logogm.jpg" />
     <Content Include="InmobiliariasIn.aspx" />
+    <Content Include="js\Administrador.js" />
     <Content Include="js\ConfirmacionIn.js" />
     <Content Include="js\ConsultasIn.js" />
     <Content Include="js\DetallePropiedadIn.js" />
@@ -274,6 +278,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.aspx.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador.aspx.designer.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConfirmacionIn.aspx.cs">
       <DependentUpon>ConfirmacionIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

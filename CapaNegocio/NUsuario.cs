@@ -53,6 +53,11 @@ namespace CapaNegocio
             return DUsuario.GetInstance().VerificarUsuario(Iduser);
         }
 
+        public Respuesta<EAdministrador> LoginAdmin(string Correo, string Clave)
+        {
+            return DUsuario.GetInstance().LoginAdmin(Correo, Clave);
+        }
+
         public Respuesta<List<ERol>> ListaRoles()
         {
             return DUsuario.GetInstance().ListaRoles();

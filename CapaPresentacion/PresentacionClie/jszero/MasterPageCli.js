@@ -7,7 +7,7 @@ const closeChatbot = document.querySelector("#close-chatbot");
 
 
 let esquemaSimplificado = [];
-const tokenOPENAI = '';
+const tokenOPENAI = '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';
 
 // Initialize user message and file data
 const userData = {
