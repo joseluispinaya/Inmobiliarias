@@ -19,6 +19,29 @@ namespace CapaPresentacion.PresentacionClie
 		}
 
         [WebMethod]
+        public static string AgenteModel(string prompt)
+        {
+
+            try
+            {
+                if (string.IsNullOrEmpty(prompt))
+                {
+                    return "Debe ingresar una pregunta.";
+                }
+                //var respChatbot = Utilidadesj.GetInstance().RespCuidadosMascota(prompt);
+                var respChatbot = Utilidadesj.GetInstance().RespuestaAgenteModel(prompt);
+
+                return respChatbot;
+
+
+            }
+            catch (Exception)
+            {
+                return "Tu pregunta está fuera de nuestro modelo. Intentá con otra o reformulá tu consulta.";
+            }
+        }
+
+        [WebMethod]
         public static Respuesta<List<TablasEsquema>> ObtenerEsquemaBD()
         {
             try

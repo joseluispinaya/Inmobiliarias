@@ -1,6 +1,6 @@
 ﻿
 let esquemaSimplificado = [];
-const tokenOPENAI = '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';
+const tokenOPENAI = 'mikey';
 
 $(document).ready(function () {
 
@@ -8,7 +8,7 @@ $(document).ready(function () {
     const usuarioL = sessionStorage.getItem('usuarioIn');
 
     if (tokenSesion && usuarioL) {
-        obtenerEsquema();
+        //obtenerEsquema();
         const usuario = JSON.parse(usuarioL);
         obtenerDetalleUsuarioRP(usuario.IdUsuario);
     } else {
@@ -255,160 +255,6 @@ async function lenguajeNaturalASQL() {
     }
 }
 
-//async function lenguajeNaturalASQL() {
-//    const userInput = $("#user-input").val().trim();
-//    if (!userInput) {
-//        swal("Advertencia", "Por favor ingresa una consulta.", "warning");
-//        return;
-//    }
-//    if (!esquemaSimplificado.length) {
-//        swal("Advertencia", "El esquema aún no está cargado.", "warning");
-//        return;
-//    }
-
-//    // Primera capa de validación: proteger contra instrucciones peligrosas desde el input
-//    const instruccionesNovalidas = ["insertar", "actualizar", "eliminar", "borrar", "alterar", "remover", "clave", "contraseña", "modificar"];
-//    for (let palabrano of instruccionesNovalidas) {
-//        if (userInput.toLowerCase().includes(palabrano)) {
-//            swal("Advertencia", "No puede realizar alteraciones", "warning");
-//            return;
-//        }
-//    }
-
-//    const instruccionesPeligrosas = ["insert", "update", "delete", "drop", "alter", "create", "truncate", "merge", "exec"];
-//    for (let palabra of instruccionesPeligrosas) {
-//        if (userInput.toLowerCase().includes(palabra)) {
-//            swal("Advertencia", "Solo se permiten consultas de lectura (SELECT).", "warning");
-//            return;
-//        }
-//    }
-
-//    agregarMensaje(userInput, "user-message");
-//    $("#user-input").val("");
-//    document.getElementById("btn-loading").style.display = "inline";
-//    $('#btnenviar').prop('disabled', true);
-
-//    const promptSistema = `
-//    Eres un asistente experto en generar consultas SQL específicamente para Microsoft SQL Server.
-
-//    Tu tarea es transformar instrucciones en lenguaje natural en consultas T-SQL válidas, claras y eficientes, usando el siguiente esquema de base de datos:
-
-//    ${JSON.stringify(esquemaSimplificado, null, 2)}
-
-//    Reglas importantes:
-//    - Usa correctamente la sintaxis de T-SQL para SQL Server.
-//    - Utiliza JOIN si se necesitan datos de varias tablas.
-//    - Aplica condiciones WHERE, filtros TOP, funciones como GETDATE(), DATEDIFF(), etc., si corresponde.
-//    - IMPORTANTE: No utilices bloques de código Markdown como \`\`\`sql o \`\`\`. Devuelve solo la sentencia SQL en texto plano.
-//    - No incluyas explicaciones, encabezados, ni texto adicional.
-//    - Si la instrucción no puede ser respondida con una sentencia SELECT o no está relacionada con el esquema, responde solo con: NO_VALIDO.
-
-//    Ejemplos:
-
-//    "original_query": "Mostrar los últimos 10 usuarios registrados."
-//    "sql_query": "SELECT TOP 10 * FROM USUARIOS ORDER BY IdUsuario DESC;"
-
-//    "original_query": "Mostrar todas las propiedades disponibles."
-//    "sql_query": "SELECT * FROM PROPIEDADES WHERE Estado = 'Disponible';"
-
-//    "original_query": "Mostrar las propiedades junto con su tipo y distrito."
-//    "sql_query": "SELECT P.Direccion, P.Precio, T.NombreTipo, D.Distrito FROM PROPIEDADES P INNER JOIN TIPO_PROPIEDADES T ON P.IdTipoPropi = T.IdTipoPropi INNER JOIN DISTRITOS D ON P.IdDistrito = D.IdDistrito;"
-
-//    "original_query": "Mostrar las propiedades con sus inmobiliarias."
-//    "sql_query": "SELECT P.Direccion, P.Precio, I.NombreInmobiliaria FROM PROPIEDADES P INNER JOIN INMOBILIARIAS I ON P.IdInmobiliaria = I.IdInmobiliaria;"
-
-//    "original_query": "Cuántas propiedades hay registradas por cada tipo."
-//    "sql_query": "SELECT T.NombreTipo, COUNT(*) AS Cantidad FROM PROPIEDADES P INNER JOIN TIPO_PROPIEDADES T ON P.IdTipoPropi = T.IdTipoPropi GROUP BY T.NombreTipo;"
-
-//    "original_query": "Mostrar propiedades registradas en el Distrito 5."
-//    "sql_query": "SELECT P.Direccion, P.Precio FROM PROPIEDADES P INNER JOIN DISTRITOS D ON P.IdDistrito = D.IdDistrito WHERE D.Distrito = 'Distrito 5';"
-
-//    "original_query": "Qué dirección tiene la inmobiliaria El Castillo."
-//    "sql_query": "SELECT Direccion FROM INMOBILIARIAS WHERE NombreInmobiliaria = 'El Castillo';"
-
-//    Ahora genera la consulta para el siguiente requerimiento:
-//    `;
-
-//    try {
-//        const response = await fetch("https://api.openai.com/v1/chat/completions", {
-//            method: "POST",
-//            headers: {
-//                "Content-Type": "application/json",
-//                "Authorization": `Bearer ${tokenOPENAI}`
-//            },
-//            body: JSON.stringify({
-//                model: "gpt-4o",
-//                messages: [
-//                    { role: "system", content: promptSistema },
-//                    { role: "user", content: userInput }
-//                ],
-//                temperature: 0.2,
-//                max_tokens: 300
-//            })
-//        });
-
-//        if (!response.ok) {
-//            const err = await response.json();
-//            throw new Error(err.error.message || "Error al llamar a la API de OpenAI");
-//        }
-
-//        const data = await response.json();
-//        let sqlGenerado = data.choices[0].message.content.trim();
-//        console.log("SQL inicio:", sqlGenerado);
-//        // Limpieza por si vienen bloques ```sql por error
-//        sqlGenerado = sqlGenerado.replace(/```sql|```/g, "").trim();
-
-//        console.log("SQL Limpio:", sqlGenerado);
-
-//        // Si OpenAI indica que no puede generar algo válido
-//        if (sqlGenerado === "NO_VALIDO") {
-//            swal("Advertencia", "La solicitud no es válida o no está relacionada con el esquema.", "warning");
-//            document.getElementById("btn-loading").style.display = "none";
-//            $('#btnenviar').prop('disabled', false);
-//            return;
-//        }
-
-//        // Segunda capa de validación: verificar la sentencia generada
-//        const sqlMayus = sqlGenerado.toUpperCase();
-//        if (!sqlMayus.startsWith("SELECT")) {
-//            swal("Advertencia", "Solo se permiten consultas SELECT.", "warning");
-//            document.getElementById("btn-loading").style.display = "none";
-//            $('#btnenviar').prop('disabled', false);
-//            return;
-//        }
-
-//        for (let palabra of instruccionesPeligrosas) {
-//            if (sqlMayus.includes(palabra.toUpperCase())) {
-//                swal("Advertencia", "La consulta generada contiene instrucciones no permitidas.", "warning");
-//                document.getElementById("btn-loading").style.display = "none";
-//                $('#btnenviar').prop('disabled', false);
-//                return;
-//            }
-//        }
-
-//        const tablasPermitidas = esquemaSimplificado.map(tabla => tabla.NombreTabla.toUpperCase());
-//        const tablasEnSQL = [...sqlMayus.matchAll(/\bFROM\s+(\w+)|\bJOIN\s+(\w+)/g)]
-//            .map(match => (match[1] || match[2]).toUpperCase());
-//        const tablasInvalidas = tablasEnSQL.filter(tabla => !tablasPermitidas.includes(tabla));
-
-//        if (tablasInvalidas.length > 0) {
-//            swal("Advertencia", `La consulta intenta acceder a tablas no reconocidas: ${tablasInvalidas.join(", ")}`, "warning");
-//            document.getElementById("btn-loading").style.display = "none";
-//            $('#btnenviar').prop('disabled', false);
-//            return;
-//        }
-
-//        console.log("SQL final:", sqlGenerado);
-
-//        ejecutarConsultaSQL(sqlGenerado, userInput);
-
-//    } catch (error) {
-//        console.error("Error al generar SQL:", error.message);
-//        agregarMensaje("Ocurrió un error generando la consulta SQL.", "bot-message");
-//        document.getElementById("btn-loading").style.display = "none";
-//        $('#btnenviar').prop('disabled', false);
-//    }
-//}
 
 function ejecutarConsultaSQL(sqlGenerado, userInput) {
     $.ajax({

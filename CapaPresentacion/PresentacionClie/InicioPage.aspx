@@ -33,15 +33,6 @@
                             <div class="row">
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="txtBusca">Consulta</label>
-                                        <div class="form-field">
-                                            <div class="icon"><span class="ion-ios-search"></span></div>
-                                            <input type="text" id="txtBusca" class="form-control" placeholder="City/Locality Name">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg align-items-end">
-                                    <div class="form-group">
                                         <label for="cbmTipo">Tipo Propiedad</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
@@ -79,7 +70,6 @@
                                 <div class="col-lg align-self-end">
                                     <div class="form-group">
                                         <div class="form-field">
-                                            <%--<input type="button" value="Search Property" class="form-control btn btn-primary">--%>
                                             <button id="btnBuscar" type="button" class="form-control btn btn-primary">Consultar</button>
                                         </div>
                                     </div>

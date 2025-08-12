@@ -23,10 +23,10 @@
 
       <link rel="stylesheet" href="css/ionicons.min.css">
 
-      <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+      <%--<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+      <link rel="stylesheet" href="css/jquery.timepicker.css">--%>
+
       <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
       <link rel="stylesheet" href="css/flaticon.css">
       <link rel="stylesheet" href="css/icomoon.css">
       <link rel="stylesheet" href="css/style.css">
@@ -219,15 +219,17 @@
     <!-- <script src="js/aos.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
+    <%--<script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>--%>
     <script src="js/jquery.timepicker.min.js"></script>
     <script src="js/scrollax.min.js"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script> -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../assets/plugin/sweetalert.min.js"></script>
+    <script src="../assets/plugin/loadingoverlay/loadingoverlay.js"></script>
     <script src="js/main.js"></script>
     <%--<script src="js/chatze.js"></script>--%>
-    <script src="jszero/MasterPageCli.js"></script>
+    <script src="jszero/MasterNuevo.js"></script>
     <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
 </body>
 </html>

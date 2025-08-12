@@ -27,6 +27,11 @@ namespace CapaNegocio
         }
         #endregion
 
+        public Respuesta<List<TablasEsquema>> EsquemaDatos()
+        {
+            return DChatBot.GetInstance().EsquemaDatos();
+        }
+
         public Dictionary<string, DataTable> ObtenerEsquemaBD()
         {
             return DChatBot.GetInstance().ObtenerEsquemaBD();

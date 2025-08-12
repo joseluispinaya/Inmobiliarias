@@ -44,6 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -125,8 +129,37 @@
     <Content Include="assets\js\ui-modals.js" />
     <Content Include="assets\js\ui-popover.js" />
     <Content Include="assets\js\ui-toasts.js" />
+    <Content Include="assets\plugin\bootstrap-timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="assets\plugin\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="assets\plugin\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="assets\plugin\bootstrap-timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="assets\plugin\calen\es.js" />
+    <Content Include="assets\plugin\calen\fullcalendar.min.css" />
+    <Content Include="assets\plugin\calen\fullcalendar.min.js" />
+    <Content Include="assets\plugin\calen\jquery.min.js" />
+    <Content Include="assets\plugin\calen\moment.min.js" />
+    <Content Include="assets\plugin\datepicker-es.js" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\index.html" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\LICENSE.txt" />
     <Content Include="assets\plugin\loadingoverlay\loadingoverlay.js" />
     <Content Include="assets\plugin\loadingoverlay\loadingoverlay.min.js" />
+    <Content Include="assets\plugin\sweetalert.min.js" />
     <Content Include="assets\vendor\css\core.css" />
     <Content Include="assets\vendor\css\pages\page-account-settings.css" />
     <Content Include="assets\vendor\css\pages\page-auth.css" />
@@ -250,8 +283,25 @@
     <Content Include="PresentacionClie\images\work-8.jpg" />
     <Content Include="PresentacionClie\images\work-9.jpg" />
     <Content Include="PresentacionClie\InicioPage.aspx" />
+    <Content Include="PresentacionClie\jquery-ui\idioma\datepicker-es.js" />
+    <Content Include="PresentacionClie\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="PresentacionClie\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="PresentacionClie\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="PresentacionClie\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="PresentacionClie\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="PresentacionClie\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.css" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.js" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.min.css" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.min.js" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="PresentacionClie\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="PresentacionClie\jquery-ui\LICENSE.txt" />
     <Content Include="PresentacionClie\jszero\DetallePropiedadC.js" />
     <Content Include="PresentacionClie\jszero\InicioPage.js" />
+    <Content Include="PresentacionClie\jszero\MasterNuevo.js" />
     <Content Include="PresentacionClie\jszero\MasterPageCli.js" />
     <Content Include="PresentacionClie\js\aos.js" />
     <Content Include="PresentacionClie\js\bootstrap-datepicker.js" />
@@ -272,6 +322,8 @@
     <Content Include="PresentacionClie\js\popper.min.js" />
     <Content Include="PresentacionClie\js\range.js" />
     <Content Include="PresentacionClie\js\scrollax.min.js" />
+    <Content Include="PresentacionClie\toastr\toastr.min.css" />
+    <Content Include="PresentacionClie\toastr\toastr.min.js" />
     <Content Include="PropiedadesIn.aspx" />
     <Content Include="PropietariosIn.aspx" />
     <Content Include="UsuariosIn.aspx" />
@@ -419,6 +471,12 @@
     <Content Include="assets\vendor\fonts\boxicons\boxicons.ttf" />
     <Content Include="assets\vendor\fonts\boxicons\boxicons.woff" />
     <Content Include="assets\vendor\fonts\boxicons\boxicons.woff2" />
+    <Content Include="assets\plugin\bootstrap-timepicker\CHANGELOG.md" />
+    <Content Include="assets\plugin\bootstrap-timepicker\css\timepicker.less" />
+    <Content Include="assets\plugin\bootstrap-timepicker\LICENSE" />
+    <Content Include="assets\plugin\bootstrap-timepicker\package.json" />
+    <Content Include="assets\plugin\bootstrap-timepicker\README.md" />
+    <Content Include="assets\plugin\jquery-ui-1.12.1\package.json" />
     <None Include="packages.config" />
     <Content Include="PageH.Master" />
     <Content Include="PresentacionClie\PageClien.Master" />
